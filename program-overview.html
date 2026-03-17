@@ -282,6 +282,61 @@
   .theme-toggle .icon-moon { left: 6px; }
   .theme-toggle .icon-sun { right: 5px; }
 
+  /* === PLAN OF STUDY === */
+  .plan-stats-row { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .plan-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .semester-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  .semester-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+    font-weight: 600; font-size: 1rem;
+  }
+  .semester-credits {
+    font-size: 1rem; font-weight: 700; color: var(--accent);
+  }
+  .semester-courses { padding: 0.5rem 0; }
+  .plan-course {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.5rem 1.25rem; transition: background 0.15s;
+  }
+  .plan-course:hover { background: var(--highlight); }
+  .plan-course.is-major { border-left: 3px solid var(--accent); }
+  .plan-course.is-gened { border-left: 3px solid var(--orange); }
+  .plan-course.is-elective { border-left: 3px solid var(--border); }
+  .plan-course .pc-code {
+    font-weight: 600; font-size: 1rem; min-width: 110px;
+    color: var(--text);
+  }
+  .plan-course.is-major .pc-code { color: var(--accent); }
+  .plan-course .pc-title { flex: 1; font-size: 1rem; color: var(--text-dim); }
+  .plan-course .pc-credits {
+    font-weight: 700; font-size: 1rem; color: var(--text-dim);
+    min-width: 24px; text-align: right;
+  }
+  .plan-legend {
+    display: flex; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 1rem;
+    align-items: center; flex-wrap: wrap;
+  }
+  .plan-legend-item {
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .plan-legend-swatch {
+    width: 16px; height: 4px; border-radius: 2px;
+  }
+  .year-label {
+    grid-column: 1 / -1;
+    font-size: 1.1rem; font-weight: 700; color: var(--heading);
+    padding: 0.5rem 0 0; margin-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .year-label:first-child { border-top: none; margin-top: 0; }
+
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     nav { padding: 0 1rem; gap: 1rem; }
@@ -291,6 +346,7 @@
     .mlo-grid { grid-template-columns: 1fr; }
     .stats-row { flex-direction: column; }
     .course-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .plan-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -303,6 +359,7 @@
     <div class="tab" data-view="mlos">Program MLOs</div>
     <div class="tab" data-view="courses">Courses</div>
     <div class="tab" data-view="matrix">Alignment Matrix</div>
+    <div class="tab" data-view="plan">Plan of Study</div>
   </div>
   <div class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">
     <span class="icon-moon">&#9790;</span>
@@ -385,6 +442,14 @@
     <div class="matrix-wrap">
       <table class="matrix" id="matrix-table"></table>
     </div>
+  </div>
+
+  <!-- ========== PLAN OF STUDY ========== -->
+  <div class="view" id="view-plan">
+    <h1>Four-Year Plan of Study</h1>
+    <p class="subtitle">120-credit degree plan — Catalog 2025–26. Major courses are highlighted.</p>
+    <div class="plan-stats-row" id="plan-stats"></div>
+    <div class="plan-grid" id="plan-grid"></div>
   </div>
 </main>
 
@@ -724,6 +789,124 @@ function renderMatrix() {
   });
 }
 renderMatrix();
+
+// === PLAN OF STUDY DATA ===
+const planSemesters = [
+  { term:"Fall 2025", year:1, credits:14, courses:[
+    { code:"ART 110", title:"2D Fundamentals", credits:3, type:"major" },
+    { code:"DSGN 105", title:"Digital Imaging", credits:3, type:"major" },
+    { code:"FYE 100", title:"College Engagement Sem.", credits:2, type:"gened" },
+    { code:"HUM 100", title:"Reacting to the Past", credits:3, type:"gened" },
+    { code:"Math Gen Ed", title:"Student Choice", credits:3, type:"gened" },
+  ]},
+  { term:"Spring 2026", year:1, credits:16, courses:[
+    { code:"ART 112", title:"Drawing", credits:3, type:"major" },
+    { code:"ART 215", title:"Digital Photography", credits:3, type:"major" },
+    { code:"COMM 120", title:"Intro to Human Comm", credits:3, type:"gened" },
+    { code:"DSGN 114", title:"Intro to Graphic Design", credits:3, type:"major" },
+    { code:"ENGL 125", title:"Composition I", credits:3, type:"gened" },
+    { code:"GEN 101", title:"Jacket Journey", credits:1, type:"gened" },
+  ]},
+  { term:"Fall 2026", year:2, credits:16, courses:[
+    { code:"DSGN 107", title:"Digital Illustration", credits:3, type:"major" },
+    { code:"DSGN 205", title:"Page Layout", credits:3, type:"major" },
+    { code:"ENGL 225", title:"Composition II", credits:3, type:"gened" },
+    { code:"Science Gen Ed", title:"Student Choice", credits:4, type:"gened" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+  ]},
+  { term:"Spring 2027", year:2, credits:14, courses:[
+    { code:"COMM 260", title:"Digital Media Production", credits:3, type:"major" },
+    { code:"DSGN 220", title:"Design Thinking", credits:1, type:"major" },
+    { code:"DSGN 230", title:"Design History", credits:1, type:"major" },
+    { code:"HPM Gen Ed", title:"Student Choice", credits:3, type:"gened" },
+    { code:"Soc Sci Gen Ed", title:"Student Choice", credits:3, type:"gened" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"GEN 201", title:"Jacket Journey", credits:1, type:"gened" },
+  ]},
+  { term:"Fall 2027", year:3, credits:14, courses:[
+    { code:"CSCI 110", title:"Introduction to Web Dev.", credits:2, type:"major" },
+    { code:"DSGN 312", title:"Packaging Design", credits:3, type:"major" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+  ]},
+  { term:"Spring 2028", year:3, credits:16, courses:[
+    { code:"DSGN 310", title:"Corporate Brand Comm.", credits:3, type:"major" },
+    { code:"DSGN 320", title:"Motion Graphics", credits:3, type:"major" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"GEN 301", title:"Jacket Journey", credits:1, type:"gened" },
+  ]},
+  { term:"Fall 2028", year:4, credits:16, courses:[
+    { code:"DSGN 412", title:"Portfolio Design", credits:1, type:"major" },
+    { code:"DSGN 498", title:"Senior Capstone", credits:3, type:"major" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+  ]},
+  { term:"Spring 2029", year:4, credits:14, courses:[
+    { code:"DSGN 410", title:"Bus. of Graphic Design", credits:1, type:"major" },
+    { code:"DSGN 491", title:"Design Internship", credits:3, type:"major" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"Open Elective", title:"Student Choice", credits:3, type:"elective" },
+    { code:"GEN 401", title:"Jacket Journey", credits:1, type:"gened" },
+  ]},
+];
+
+// === RENDER PLAN OF STUDY ===
+function renderPlan() {
+  const grid = document.getElementById('plan-grid');
+  const stats = document.getElementById('plan-stats');
+
+  const totalCredits = planSemesters.reduce((s, sem) => s + sem.credits, 0);
+  const majorCredits = planSemesters.reduce((s, sem) => s + sem.courses.filter(c => c.type === 'major').reduce((a, c) => a + c.credits, 0), 0);
+  const genedCredits = planSemesters.reduce((s, sem) => s + sem.courses.filter(c => c.type === 'gened').reduce((a, c) => a + c.credits, 0), 0);
+  const electiveCredits = totalCredits - majorCredits - genedCredits;
+
+  stats.innerHTML = `
+    <div class="stat-card"><div class="stat-num">${totalCredits}</div><div class="stat-label">Total Credits</div></div>
+    <div class="stat-card"><div class="stat-num">${majorCredits}</div><div class="stat-label">Major Credits</div></div>
+    <div class="stat-card"><div class="stat-num">${genedCredits}</div><div class="stat-label">Gen Ed Credits</div></div>
+    <div class="stat-card"><div class="stat-num">${electiveCredits}</div><div class="stat-label">Open Electives</div></div>
+  `;
+  stats.insertAdjacentHTML('afterend', `<div class="plan-legend">
+    <span class="plan-legend-item"><span class="plan-legend-swatch" style="background:var(--accent)"></span> Major Course</span>
+    <span class="plan-legend-item"><span class="plan-legend-swatch" style="background:var(--orange)"></span> Gen Ed Requirement</span>
+    <span class="plan-legend-item"><span class="plan-legend-swatch" style="background:var(--border)"></span> Open Elective</span>
+  </div>`);
+
+  let html = '';
+  let currentYear = 0;
+  const yearNames = ['','Freshman Year','Sophomore Year','Junior Year','Senior Year'];
+
+  planSemesters.forEach(sem => {
+    if (sem.year !== currentYear) {
+      currentYear = sem.year;
+      html += `<div class="year-label">${yearNames[sem.year]}</div>`;
+    }
+    html += `<div class="semester-card">
+      <div class="semester-header">
+        <span>${sem.term}</span>
+        <span class="semester-credits">${sem.credits} cr</span>
+      </div>
+      <div class="semester-courses">
+        ${sem.courses.map(c => `
+          <div class="plan-course is-${c.type}">
+            <span class="pc-code">${c.code}</span>
+            <span class="pc-title">${c.title}</span>
+            <span class="pc-credits">${c.credits}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  });
+
+  grid.innerHTML = html;
+}
+renderPlan();
 </script>
 </body>
 </html>
