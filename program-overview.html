@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC Graphic Design Program — Learning Outcomes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* Palette: Indigo Velvet #4F2683 | Dark Amethyst #221338 | Tech Blue #2F61AE | Lavender Grey #7F8EAA | Pale Oak #CCC4A8 */
+  :root {
+    --bg: #141416;
+    --surface: #1e1e22;
+    --surface2: #28282e;
+    --border: #3a3a42;
+    --text: #f0f0f0;
+    --text-dim: #CCC4A8;
+    --heading: #f0f0f0;
+    --accent: #CCC4A8;
+    --accent-glow: rgba(204,196,168,0.15);
+    --green: #6dbf7b;
+    --green-dim: rgba(109,191,123,0.15);
+    --orange: #e8a04c;
+    --purple: #7b5ea7;
+    --rose: #c97088;
+    --cyan: #4a8ad4;
+    --nav-bg: rgba(20,20,22,0.9);
+    --shadow: rgba(0,0,0,0.4);
+    --highlight: rgba(204,196,168,0.08);
+  }
+
+  [data-theme="light"] {
+    --bg: #f5f4f2;
+    --surface: #ffffff;
+    --surface2: #eeece8;
+    --border: #d8d5ce;
+    --text: #221338;
+    --text-dim: #5a4d68;
+    --heading: #4F2683;
+    --accent: #4F2683;
+    --accent-glow: rgba(79,38,131,0.1);
+    --green: #3a8a4a;
+    --green-dim: rgba(58,138,74,0.1);
+    --orange: #c07a20;
+    --purple: #4F2683;
+    --rose: #a04060;
+    --cyan: #2F61AE;
+    --nav-bg: rgba(245,244,242,0.9);
+    --shadow: rgba(34,19,56,0.1);
+    --highlight: rgba(79,38,131,0.06);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 12pt;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; height: 56px; gap: 2rem;
+  }
+  nav .logo { font-weight: 700; font-size: 1rem; color: var(--accent); white-space: nowrap; }
+  nav .tabs { display: flex; gap: 0.25rem; }
+  nav .tab {
+    padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;
+    font-size: 1rem; font-weight: 500; color: var(--text-dim);
+    transition: all 0.2s;
+  }
+  nav .tab:hover { color: var(--text); background: var(--surface); }
+  nav .tab.active { color: var(--accent); background: var(--accent-glow); }
+
+  /* === MAIN === */
+  main { padding: 80px 2rem 4rem; max-width: 1200px; margin: 0 auto; }
+
+  .view { display: none; animation: fadeIn 0.3s ease; }
+  .view.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading); }
+  h2 { font-size: 1.35rem; font-weight: 600; margin-bottom: 1rem; color: var(--heading); }
+  .subtitle { color: var(--text-dim); font-size: 1rem; margin-bottom: 2rem; }
+
+  /* === MLO CARDS === */
+  .mlo-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem; margin-bottom: 2rem;
+  }
+  .mlo-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem; cursor: pointer;
+    transition: all 0.25s;
+  }
+  .mlo-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
+  .mlo-card.selected { border-color: var(--accent); background: var(--accent-glow); }
+  .mlo-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 8px; font-size: 1rem; font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .mlo-card .title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; }
+  .mlo-card .desc { font-size: 1rem; color: var(--text-dim); line-height: 1.5; }
+  .mlo-card .course-count {
+    margin-top: 0.75rem; font-size: 1rem; color: var(--green);
+    padding-top: 0.75rem; border-top: 1px solid var(--border);
+  }
+
+  .domain-tag {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem;
+  }
+  .domain-tag i { font-size: 0.8rem; }
+
+  /* domain colors — dark mode defaults */
+  .domain-conceptual .mlo-num { background: rgba(123,94,167,0.2); color: var(--purple); }
+  .domain-conceptual .domain-tag { background: rgba(123,94,167,0.15); color: var(--purple); }
+  .domain-technical .mlo-num { background: rgba(74,138,212,0.2); color: var(--cyan); }
+  .domain-technical .domain-tag { background: rgba(74,138,212,0.15); color: var(--cyan); }
+  .domain-applied .mlo-num { background: rgba(232,160,76,0.2); color: var(--orange); }
+  .domain-applied .domain-tag { background: rgba(232,160,76,0.15); color: var(--orange); }
+  .domain-professional .mlo-num { background: rgba(109,191,123,0.2); color: var(--green); }
+  .domain-professional .domain-tag { background: rgba(109,191,123,0.15); color: var(--green); }
+
+  /* domain colors — light mode overrides */
+  [data-theme="light"] .domain-conceptual .mlo-num { background: rgba(79,38,131,0.1); }
+  [data-theme="light"] .domain-conceptual .domain-tag { background: rgba(79,38,131,0.08); }
+  [data-theme="light"] .domain-technical .mlo-num { background: rgba(47,97,174,0.1); }
+  [data-theme="light"] .domain-technical .domain-tag { background: rgba(47,97,174,0.08); }
+  [data-theme="light"] .domain-applied .mlo-num { background: rgba(192,122,32,0.1); }
+  [data-theme="light"] .domain-applied .domain-tag { background: rgba(192,122,32,0.08); }
+  [data-theme="light"] .domain-professional .mlo-num { background: rgba(58,138,74,0.1); }
+  [data-theme="light"] .domain-professional .domain-tag { background: rgba(58,138,74,0.08); }
+
+  /* === COURSE LIST === */
+  .course-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .course-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden; transition: all 0.2s;
+  }
+  .course-item:hover { border-color: var(--accent); }
+  .course-header {
+    padding: 1rem 1.25rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .course-header .left { display: flex; align-items: center; gap: 0.75rem; }
+  .course-code {
+    font-weight: 700; font-size: 1rem; color: var(--accent);
+    background: var(--accent-glow); padding: 0.25rem 0.6rem; border-radius: 6px;
+  }
+  .course-title { font-weight: 500; font-size: 1rem; }
+  .course-mlo-dots { display: flex; gap: 4px; }
+  .course-mlo-dots .mlo-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; line-height: 1;
+    border: 1.5px solid var(--border); color: var(--border); background: transparent;
+    transition: all 0.15s;
+  }
+  .course-mlo-dots .mlo-icon.active {
+    border-color: var(--green); color: var(--green); background: var(--green-dim);
+  }
+  .chevron { color: var(--text-dim); transition: transform 0.2s; font-size: 1.2rem; }
+  .course-item.open .chevron { transform: rotate(180deg); }
+  .course-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+  }
+  .course-item.open .course-body { max-height: 2000px; }
+  .course-body-inner {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .course-purpose { color: var(--text-dim); font-size: 1rem; margin: 1rem 0; }
+  .clo-item {
+    padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+    display: flex; gap: 0.75rem; font-size: 1rem;
+  }
+  .clo-item:last-child { border-bottom: none; }
+  .clo-num { font-weight: 700; color: var(--accent); min-width: 24px; }
+  .clo-text { flex: 1; }
+  .clo-mlos { display: flex; gap: 4px; flex-wrap: wrap; align-items: flex-start; margin-top: 2px; }
+  .clo-mlo-tag {
+    font-size: 0.8rem; font-weight: 600; padding: 0.15rem 0.4rem;
+    border-radius: 4px; white-space: nowrap;
+  }
+
+  /* === MATRIX === */
+  .matrix-wrap { overflow-x: auto; margin-top: 1rem; }
+  .matrix {
+    width: 100%; border-collapse: collapse; font-size: 1rem;
+  }
+  .matrix th {
+    background: var(--surface2); padding: 0.6rem 0.5rem;
+    font-weight: 600; font-size: 1rem; text-align: center;
+    border: 1px solid var(--border); position: sticky; top: 0;
+    white-space: nowrap;
+  }
+  .matrix th:first-child { text-align: left; min-width: 200px; }
+  .matrix td {
+    padding: 0.5rem; text-align: center;
+    border: 1px solid var(--border); transition: background 0.15s;
+  }
+  .matrix td:first-child { text-align: left; font-weight: 500; white-space: nowrap; }
+  .matrix tr:hover td { background: var(--surface2); }
+  .matrix .check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; border-radius: 6px;
+    background: var(--green-dim); color: var(--green); font-weight: 700; font-size: 0.9rem;
+  }
+  .matrix .empty { color: var(--border); }
+  .matrix .highlight-col { background: var(--highlight); }
+  .matrix .highlight-row td { background: var(--highlight); }
+  .matrix th.highlight-col { background: var(--accent); color: #fff; }
+
+  /* === FILTER BAR === */
+  .filter-bar {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  }
+  .filter-btn {
+    padding: 0.4rem 0.8rem; border-radius: 20px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-dim); font-size: 1rem;
+    cursor: pointer; transition: all 0.2s; font-weight: 500;
+  }
+  .filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
+  .filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+  /* === STATS === */
+  .stats-row { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1rem 1.25rem; flex: 1; min-width: 120px;
+  }
+  .stat-num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 1rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+  /* === LEGEND === */
+  .domain-legend {
+    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+    padding: 0.75rem 1rem; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--border);
+    margin-bottom: 1.5rem; font-size: 1rem;
+  }
+  .domain-legend .legend-label {
+    font-weight: 600; color: var(--text-dim); text-transform: uppercase;
+    font-size: 0.8rem; letter-spacing: 0.05em; margin-right: 0.25rem;
+  }
+  .domain-legend .legend-item {
+    display: flex; align-items: center; gap: 0.35rem; color: var(--text);
+  }
+  .domain-legend .legend-swatch {
+    width: 10px; height: 10px; border-radius: 3px;
+  }
+
+  /* === THEME TOGGLE === */
+  .theme-toggle {
+    margin-left: auto; cursor: pointer; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 20px;
+    width: 44px; height: 24px; position: relative; transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .theme-toggle::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--text-dim); transition: all 0.3s;
+  }
+  [data-theme="light"] .theme-toggle::after {
+    left: 23px; background: var(--accent);
+  }
+  .theme-toggle .icon-sun, .theme-toggle .icon-moon {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    font-size: 0.6rem; line-height: 1;
+  }
+  .theme-toggle .icon-moon { left: 6px; }
+  .theme-toggle .icon-sun { right: 5px; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; gap: 1rem; }
+    nav .tabs { overflow-x: auto; }
+    main { padding: 72px 1rem 3rem; }
+    h1 { font-size: 1.5rem; }
+    .mlo-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-direction: column; }
+    .course-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">DC Graphic Design</div>
+  <div class="tabs">
+    <div class="tab active" data-view="overview">Overview</div>
+    <div class="tab" data-view="mlos">Program MLOs</div>
+    <div class="tab" data-view="courses">Courses</div>
+    <div class="tab" data-view="matrix">Alignment Matrix</div>
+  </div>
+  <div class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">
+    <span class="icon-moon">&#9790;</span>
+    <span class="icon-sun">&#9728;</span>
+  </div>
+</nav>
+
+<main>
+  <!-- ========== OVERVIEW ========== -->
+  <div class="view active" id="view-overview">
+    <h1>DC Graphic Design Program</h1>
+    <p class="subtitle">Bachelor's program with design thinking as a core methodology</p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Program Learning Outcomes</div></div>
+      <div class="stat-card"><div class="stat-num">13</div><div class="stat-label">Core Courses</div></div>
+      <div class="stat-card"><div class="stat-num">78</div><div class="stat-label">Course Learning Outcomes</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Gaps in Coverage</div></div>
+    </div>
+
+    <h2>Learning Outcome Domains</h2>
+    <div class="mlo-grid">
+      <div class="mlo-card domain-conceptual" style="cursor:default">
+        <div class="domain-tag"><i class="fa-solid fa-lightbulb"></i> Conceptual</div>
+        <div class="title">Design thinking + communication theory</div>
+        <div class="desc">MLO 1 (Design Thinking) and MLO 3 (User-Centered Design) — foundational problem-solving and audience awareness.</div>
+      </div>
+      <div class="mlo-card domain-technical" style="cursor:default">
+        <div class="domain-tag"><i class="fa-solid fa-laptop-code"></i> Technical</div>
+        <div class="title">Tools, typography, UI/UX</div>
+        <div class="desc">MLO 2 (Tools & Tech) and MLO 4 (UX/UI Design) — software fluency and interface design skills.</div>
+      </div>
+      <div class="mlo-card domain-applied" style="cursor:default">
+        <div class="domain-tag"><i class="fa-solid fa-chart-column"></i> Applied</div>
+        <div class="title">Real-world problem solving, data vis</div>
+        <div class="desc">MLO 5 (Data Visualization) — translating complex information into clear, ethical visual narratives.</div>
+      </div>
+      <div class="mlo-card domain-professional" style="cursor:default">
+        <div class="domain-tag"><i class="fa-solid fa-briefcase"></i> Professional</div>
+        <div class="title">Portfolio, freelancing, teamwork</div>
+        <div class="desc">MLO 6 (Portfolio), MLO 7 (Collaboration), MLO 8 (Entrepreneurship) — career-readiness skills.</div>
+      </div>
+    </div>
+
+    <h2>Key Design Highlights</h2>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+      <div style="display:flex;flex-direction:column;gap:0.6rem;font-size:1rem;">
+        <div><span style="color:var(--green);font-weight:600;">All MLOs covered</span> <span style="color:var(--text-dim);">— no gaps across the curriculum</span></div>
+        <div><span style="color:var(--green);font-weight:600;">MLO 1 & MLO 6 heavily scaffolded</span> <span style="color:var(--text-dim);">— design thinking and portfolio run throughout</span></div>
+        <div><span style="color:var(--green);font-weight:600;">Data visualization intentional</span> <span style="color:var(--text-dim);">— built into DSGN 107, 310, 320, 498, 410</span></div>
+        <div><span style="color:var(--green);font-weight:600;">AI integration threaded</span> <span style="color:var(--text-dim);">— ethical, strategic use in every course</span></div>
+        <div><span style="color:var(--green);font-weight:600;">Experiential learning</span> <span style="color:var(--text-dim);">— internship and capstone as high-impact finishers</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MLOs ========== -->
+  <div class="view" id="view-mlos">
+    <h1>Program Learning Outcomes</h1>
+    <p class="subtitle">8 Bloom-aligned MLOs across 4 domains. Click an MLO to see which courses address it.</p>
+    <div class="mlo-grid" id="mlo-cards"></div>
+    <div id="mlo-detail" style="display:none;">
+      <h2 id="mlo-detail-title"></h2>
+      <div id="mlo-detail-courses" class="course-list"></div>
+    </div>
+  </div>
+
+  <!-- ========== COURSES ========== -->
+  <div class="view" id="view-courses">
+    <h1>Course Learning Outcomes</h1>
+    <p class="subtitle">13 courses, each with 5–7 CLOs mapped to program MLOs. Click to expand.</p>
+    <div class="filter-bar" id="course-filters"></div>
+    <div class="course-list" id="course-list"></div>
+  </div>
+
+  <!-- ========== MATRIX ========== -->
+  <div class="view" id="view-matrix">
+    <h1>Alignment Matrix</h1>
+    <p class="subtitle">Hover over columns to highlight an MLO. Hover rows to highlight a course.</p>
+    <div class="matrix-wrap">
+      <table class="matrix" id="matrix-table"></table>
+    </div>
+  </div>
+</main>
+
+<script>
+// === THEME TOGGLE ===
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  document.documentElement.setAttribute('data-theme', isLight ? 'dark' : 'light');
+});
+
+// === DATA ===
+const MLOs = [
+  { id:1, name:"Design Thinking", domain:"conceptual", desc:"Apply the principles of design thinking to solve complex visual communication problems across diverse media and user contexts." },
+  { id:2, name:"Tools & Tech", domain:"technical", desc:"Demonstrate proficiency in industry-standard graphic design tools and technologies to create effective visual solutions." },
+  { id:3, name:"User-Centered Design", domain:"conceptual", desc:"Analyze and interpret client needs, user behavior, and market data to inform user-centered design decisions." },
+  { id:4, name:"UX/UI Design", domain:"technical", desc:"Design compelling user interfaces and experiences that integrate accessibility, usability, and aesthetics." },
+  { id:5, name:"Data Visualization", domain:"applied", desc:"Create data visualizations that translate complex information into clear, engaging, and ethically responsible visual narratives." },
+  { id:6, name:"Portfolio & Process", domain:"professional", desc:"Construct a professional portfolio that showcases conceptual strength, technical skill, and process fluency across a range of design projects." },
+  { id:7, name:"Collaboration & Comms", domain:"professional", desc:"Collaborate effectively in multidisciplinary teams, applying project management and communication strategies used in creative industries." },
+  { id:8, name:"Entrepreneurship", domain:"professional", desc:"Demonstrate entrepreneurial thinking and freelancing readiness by developing design solutions that consider branding, business goals, and client engagement." },
+];
+
+const courses = [
+  { code:"DSGN 114", title:"Intro to Graphic Design", level:"Foundational",
+    purpose:"First formal exposure to graphic design — core principles, visual literacy, composition, typography, and digital tools.",
+    mlos:[1,2,4,6,7],
+    clos:[
+      { text:"Identify and apply fundamental design principles in visual compositions.", mlos:[1,2] },
+      { text:"Create graphic design projects demonstrating visual hierarchy, typography, and composition.", mlos:[2,4] },
+      { text:"Use industry-standard design software to produce, revise, and export design files.", mlos:[2] },
+      { text:"Analyze and critique visual design using appropriate terminology and frameworks.", mlos:[1,6] },
+      { text:"Design and deliver visual presentations that communicate design intent and process.", mlos:[6,7] },
+      { text:"Demonstrate an iterative design process through sketches, drafts, and peer critique.", mlos:[1,6,7] },
+    ]},
+  { code:"DSGN 105", title:"Digital Imaging", level:"Foundational",
+    purpose:"Core digital imaging tools and editing techniques — raster-based work, Photoshop, image ethics, and visual storytelling.",
+    mlos:[1,2,4,6,7,8],
+    clos:[
+      { text:"Use industry-standard software to create, edit, and manipulate raster-based digital images.", mlos:[2] },
+      { text:"Demonstrate understanding of image resolution, file formats, and color systems.", mlos:[2,6] },
+      { text:"Apply compositional principles and visual hierarchy in digital imagery.", mlos:[1,2] },
+      { text:"Edit and retouch photographs to enhance clarity, consistency, and impact.", mlos:[2,4] },
+      { text:"Evaluate digital images for clarity, ethical use, and appropriateness.", mlos:[6,7,8] },
+      { text:"Use generative AI tools to create and enhance digital images ethically.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 107", title:"Digital Illustration", level:"Foundational",
+    purpose:"Vector-based illustration — original illustrations, shape-building, style development, branding and infographic applications.",
+    mlos:[1,2,3,4,5,6,7,8],
+    clos:[
+      { text:"Create original vector-based illustrations using industry-standard software.", mlos:[2] },
+      { text:"Apply design principles to illustrate concepts with clarity and visual impact.", mlos:[1,4,6] },
+      { text:"Demonstrate proficiency in shape-building, path editing, layering, and color workflows.", mlos:[2,6] },
+      { text:"Develop a personal illustration style through iterative practice and critique.", mlos:[1,6,7] },
+      { text:"Design illustrations for branding, infographics, packaging, or professional contexts.", mlos:[4,5,8] },
+      { text:"Apply user-centered design strategies for infographics and visual narratives.", mlos:[1,3,5] },
+      { text:"Use AI-assisted tools to generate or remix illustrative content ethically.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 205", title:"Page Layout", level:"Intermediate",
+    purpose:"Layout, typography, and grid systems — editorial design, multi-page documents, accessibility, file prep.",
+    mlos:[1,2,3,4,6,7,8],
+    clos:[
+      { text:"Design multi-page layouts using typographic hierarchy, alignment, and grid systems.", mlos:[1,2,4,8] },
+      { text:"Apply visual organization to enhance readability and engagement in print and digital.", mlos:[1,3,4,5] },
+      { text:"Prepare layout files for professional output with proper margins and file formats.", mlos:[2,6] },
+      { text:"Integrate imagery and text to communicate clear, audience-aware messages.", mlos:[1,3,5,6] },
+      { text:"Critique and revise layouts based on feedback, focusing on clarity and communication.", mlos:[1,6,7] },
+      { text:"Use AI-assisted tools for layout generation with ethical and creative oversight.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 220", title:"Design Thinking", level:"Intermediate",
+    purpose:"Cornerstone course — human-centered design as a structured process: empathy, ideation, prototyping, testing, iteration.",
+    mlos:[1,2,3,4,6,7,8],
+    clos:[
+      { text:"Apply the full design thinking process to solve complex user-centered challenges.", mlos:[1,3,4] },
+      { text:"Conduct user research and stakeholder analysis to inform design problem framing.", mlos:[1,3] },
+      { text:"Generate and evaluate multiple design concepts through rapid ideation and feedback.", mlos:[1,6,7] },
+      { text:"Develop low- and high-fidelity prototypes that communicate ideas effectively.", mlos:[2,4,6] },
+      { text:"Collaborate within interdisciplinary teams to iterate and refine design concepts.", mlos:[3,6,7] },
+      { text:"Use AI tools to assist in ideation, prototyping, or user research ethically.", mlos:[2,3,6,8] },
+    ]},
+  { code:"DSGN 230", title:"Design History", level:"Intermediate",
+    purpose:"Historical evolution of graphic design — movements, key figures, cultural influences, and connections to contemporary practice.",
+    mlos:[1,2,4,6,7,8],
+    clos:[
+      { text:"Describe major historical movements, styles, and figures in graphic design.", mlos:[1,6] },
+      { text:"Analyze how social, political, and technological contexts shaped graphic design.", mlos:[1,6] },
+      { text:"Evaluate visual language and communicative strategies in historical design works.", mlos:[1,4] },
+      { text:"Draw connections between historical trends and contemporary practices.", mlos:[1,6,8] },
+      { text:"Communicate research findings through written, visual, or oral presentations.", mlos:[6,7] },
+      { text:"Use AI tools to explore or visualize historical design content critically.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 312", title:"Packaging Design", level:"Advanced",
+    purpose:"Consumer product design — structural packaging, dielines, brand identity in 3D, materials, sustainability, market positioning.",
+    mlos:[1,2,3,4,6,7,8],
+    clos:[
+      { text:"Design functional, visually engaging packaging that communicates brand identity.", mlos:[1,3,4,8] },
+      { text:"Develop dielines, mockups, and 3D visualizations for packaging prototypes.", mlos:[2,6] },
+      { text:"Apply structure, hierarchy, and material consideration for usability and sustainability.", mlos:[1,3,6] },
+      { text:"Critique packaging systems for market relevance, ethics, and accessibility.", mlos:[1,3,4,7,8] },
+      { text:"Produce a packaging portfolio piece with concept development and technical execution.", mlos:[6,2,4] },
+      { text:"Use AI-assisted tools to generate or visualize packaging concepts critically.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 310", title:"Corporate Brand Communication", level:"Advanced",
+    purpose:"Brand strategy, identity systems, and communication design — logos, voice, cross-platform consistency, campaigns.",
+    mlos:[1,2,3,4,5,6,7,8],
+    clos:[
+      { text:"Develop comprehensive brand identity systems including logos, typography, and tone.", mlos:[1,2,4,6] },
+      { text:"Apply branding principles to create strategies tailored to audiences and business goals.", mlos:[1,3,4,8] },
+      { text:"Design brand collateral across media platforms ensuring consistency and clarity.", mlos:[2,4,6] },
+      { text:"Critically evaluate brand effectiveness through case studies and competitor analysis.", mlos:[1,3,7] },
+      { text:"Collaborate to develop and pitch branding concepts in multiple presentation formats.", mlos:[6,7,8] },
+      { text:"Use AI tools for brand research, naming, visual development, or campaign ideation.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 320", title:"Motion Graphics", level:"Advanced",
+    purpose:"Time-based media — animation principles, typography in motion, storyboarding, After Effects, branding through motion.",
+    mlos:[1,2,3,4,5,6,7,8],
+    clos:[
+      { text:"Apply principles of animation, timing, and sequencing for engaging motion graphics.", mlos:[1,2,4] },
+      { text:"Storyboard and design time-based visual narratives with clear communication goals.", mlos:[1,3,6] },
+      { text:"Animate typography, imagery, and branding elements using industry-standard software.", mlos:[2,4,6] },
+      { text:"Integrate audio, pacing, and visual effects to enhance engagement and storytelling.", mlos:[4,6] },
+      { text:"Critique and revise motion designs based on audience needs and platform context.", mlos:[3,5,6,7] },
+      { text:"Use AI tools for animation generation, voice syncing, or storyboarding ethically.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 412", title:"Portfolio Design", level:"Capstone",
+    purpose:"Curating, refining, and presenting a professional design portfolio — case studies, personal branding, interview prep.",
+    mlos:[1,2,3,4,6,7,8],
+    clos:[
+      { text:"Curate a portfolio demonstrating conceptual strength, skill, and process fluency.", mlos:[1,2,6] },
+      { text:"Write clear and compelling case studies explaining design intent and outcomes.", mlos:[1,3,6,7] },
+      { text:"Design and present a cohesive personal brand identity across platforms.", mlos:[4,6,8] },
+      { text:"Use peer and mentor feedback to revise portfolio materials for professional impact.", mlos:[6,7] },
+      { text:"Prepare for design interviews through presentations, critiques, and storytelling.", mlos:[6,7,8] },
+      { text:"Use AI tools to support portfolio development, writing, and interview preparation.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 498", title:"Senior Capstone", level:"Capstone",
+    purpose:"Culminating course — self-directed or client-based project integrating multiple competencies, with data visualization.",
+    mlos:[1,2,3,4,5,6,7,8],
+    clos:[
+      { text:"Propose and scope a self-directed design project addressing a real-world problem.", mlos:[1,3,8] },
+      { text:"Conduct research and stakeholder analysis to inform design decisions and measure impact.", mlos:[1,3,6] },
+      { text:"Apply advanced design methods to develop, prototype, and refine a comprehensive solution.", mlos:[1,2,4] },
+      { text:"Visualize data and insights clearly and persuasively to support design intent.", mlos:[1,5,6] },
+      { text:"Present the capstone project through formats tailored to professional audiences.", mlos:[6,7,8] },
+      { text:"Use AI tools for project planning, research synthesis, or asset development.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 410", title:"Business of Graphic Design", level:"Capstone",
+    purpose:"Freelance, agency, and entrepreneurial side — pricing, contracts, project management, marketing, ethics.",
+    mlos:[1,2,3,5,6,7,8],
+    clos:[
+      { text:"Describe key business models and career pathways in the graphic design industry.", mlos:[6,8] },
+      { text:"Develop project budgets, timelines, and proposals in response to client needs.", mlos:[3,6,8] },
+      { text:"Draft contracts, invoices, and usage rights agreements per industry standards.", mlos:[6,7,8] },
+      { text:"Apply ethical, legal, and professional practices to client relationships.", mlos:[1,6,7,8] },
+      { text:"Communicate business strategy through branded content and data visualizations.", mlos:[5,6,7,8] },
+      { text:"Use AI tools for estimating, content drafting, client comms, or market research.", mlos:[2,6,8] },
+    ]},
+  { code:"DSGN 491", title:"Design Internship", level:"Capstone",
+    purpose:"Real-world application — experiential learning in a professional or client setting, building professional habits.",
+    mlos:[1,2,4,6,7,8],
+    clos:[
+      { text:"Apply design skills and tools in a professional work environment.", mlos:[1,2,4,6] },
+      { text:"Demonstrate professional communication, time management, and collaboration.", mlos:[6,7,8] },
+      { text:"Reflect on the internship experience to assess strengths and career goals.", mlos:[6,8] },
+      { text:"Document project contributions and design process for a professional portfolio.", mlos:[6,7] },
+      { text:"Use AI tools for prototyping, research, or presentation with professional standards.", mlos:[2,6,8] },
+    ]},
+];
+
+const mloColors = {
+  1:"var(--purple)", 2:"var(--cyan)", 3:"var(--purple)", 4:"var(--cyan)",
+  5:"var(--orange)", 6:"var(--green)", 7:"var(--green)", 8:"var(--green)"
+};
+
+const domainIcons = {
+  conceptual: 'fa-lightbulb',
+  technical: 'fa-laptop-code',
+  applied: 'fa-chart-column',
+  professional: 'fa-briefcase'
+};
+
+// === LEGEND ===
+const domainDefs = [
+  { name:'Conceptual', color:'var(--purple)', icon:'fa-lightbulb', mlos:'MLO 1, 3' },
+  { name:'Technical', color:'var(--cyan)', icon:'fa-laptop-code', mlos:'MLO 2, 4' },
+  { name:'Applied', color:'var(--orange)', icon:'fa-chart-column', mlos:'MLO 5' },
+  { name:'Professional', color:'var(--green)', icon:'fa-briefcase', mlos:'MLO 6, 7, 8' },
+];
+function makeLegend() {
+  return `<div class="domain-legend"><span class="legend-label">Domains</span>${domainDefs.map(d =>
+    `<span class="legend-item"><i class="fa-solid ${d.icon}" style="color:${d.color};font-size:0.85rem;width:16px;text-align:center;"></i>${d.name} <span style="color:var(--text-dim)">(${d.mlos})</span></span>`
+  ).join('')}</div>`;
+}
+document.querySelectorAll('.view').forEach(v => {
+  const sub = v.querySelector('.subtitle');
+  if (sub) sub.insertAdjacentHTML('afterend', makeLegend());
+});
+
+// === NAV ===
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('view-' + tab.dataset.view).classList.add('active');
+  });
+});
+
+// === MLO CARDS ===
+const mloCardsEl = document.getElementById('mlo-cards');
+MLOs.forEach(mlo => {
+  const courseCount = courses.filter(c => c.mlos.includes(mlo.id)).length;
+  const card = document.createElement('div');
+  card.className = `mlo-card domain-${mlo.domain}`;
+  card.dataset.mloId = mlo.id;
+  card.innerHTML = `
+    <div class="domain-tag"><i class="fa-solid ${domainIcons[mlo.domain]}"></i> ${mlo.domain}</div>
+    <div class="mlo-num">${mlo.id}</div>
+    <div class="title">MLO ${mlo.id}: ${mlo.name}</div>
+    <div class="desc">${mlo.desc}</div>
+    <div class="course-count">${courseCount} of 13 courses</div>
+  `;
+  card.addEventListener('click', () => showMloDetail(mlo.id));
+  mloCardsEl.appendChild(card);
+});
+
+function showMloDetail(mloId) {
+  document.querySelectorAll('#mlo-cards .mlo-card').forEach(c => {
+    c.classList.toggle('selected', parseInt(c.dataset.mloId) === mloId);
+  });
+  const detail = document.getElementById('mlo-detail');
+  const mlo = MLOs.find(m => m.id === mloId);
+  document.getElementById('mlo-detail-title').textContent = `Courses addressing MLO ${mloId}: ${mlo.name}`;
+  const list = document.getElementById('mlo-detail-courses');
+  list.innerHTML = '';
+  courses.filter(c => c.mlos.includes(mloId)).forEach(c => {
+    const relevantClos = c.clos.filter(clo => clo.mlos.includes(mloId));
+    const div = document.createElement('div');
+    div.style.cssText = 'background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.5rem;';
+    div.innerHTML = `
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+        <span class="course-code">${c.code}</span>
+        <span style="font-weight:500;font-size:1rem;">${c.title}</span>
+      </div>
+      ${relevantClos.map(clo => `<div style="font-size:1rem;color:var(--text-dim);padding:0.25rem 0 0.25rem 0.5rem;border-left:2px solid ${mloColors[mloId]};">${clo.text}</div>`).join('')}
+    `;
+    list.appendChild(div);
+  });
+  detail.style.display = 'block';
+}
+
+// === COURSES ===
+const filterBar = document.getElementById('course-filters');
+const levels = ['All', 'Foundational', 'Intermediate', 'Advanced', 'Capstone'];
+levels.forEach(level => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (level === 'All' ? ' active' : '');
+  btn.textContent = level;
+  btn.addEventListener('click', () => {
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterCourses(level);
+  });
+  filterBar.appendChild(btn);
+});
+
+function renderCourses(list) {
+  const el = document.getElementById('course-list');
+  el.innerHTML = '';
+  list.forEach(c => {
+    const item = document.createElement('div');
+    item.className = 'course-item';
+    const dots = MLOs.map(m => `<div class="mlo-icon${c.mlos.includes(m.id) ? ' active' : ''}">${m.id}</div>`).join('');
+    item.innerHTML = `
+      <div class="course-header">
+        <div class="left">
+          <span class="course-code">${c.code}</span>
+          <span class="course-title">${c.title}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <div class="course-mlo-dots">${dots}</div>
+          <span class="chevron">&#9662;</span>
+        </div>
+      </div>
+      <div class="course-body"><div class="course-body-inner">
+        <div class="course-purpose">${c.purpose}</div>
+        ${c.clos.map((clo, i) => `
+          <div class="clo-item">
+            <span class="clo-num">${i+1}</span>
+            <div>
+              <div class="clo-text">${clo.text}</div>
+              <div class="clo-mlos">${clo.mlos.map(m => `<span class="clo-mlo-tag" style="background:${mloColors[m]}22;color:${mloColors[m]}">MLO ${m}</span>`).join('')}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div></div>
+    `;
+    item.querySelector('.course-header').addEventListener('click', () => item.classList.toggle('open'));
+    el.appendChild(item);
+  });
+}
+
+function filterCourses(level) {
+  renderCourses(level === 'All' ? courses : courses.filter(c => c.level === level));
+}
+renderCourses(courses);
+
+// === MATRIX ===
+function renderMatrix() {
+  const table = document.getElementById('matrix-table');
+  const mloHeaders = MLOs.map((m, i) => `<th data-col="${i+1}">MLO ${m.id}<br>${m.name}</th>`).join('');
+  let html = `<thead><tr><th>Course</th>${mloHeaders}</tr></thead><tbody>`;
+  courses.forEach(c => {
+    html += `<tr><td>${c.code}</td>`;
+    MLOs.forEach(m => {
+      const has = c.mlos.includes(m.id);
+      html += `<td data-col="${m.id}">${has ? '<span class="check">&#10003;</span>' : '<span class="empty">—</span>'}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody>';
+  table.innerHTML = html;
+
+  // Hover highlighting
+  table.querySelectorAll('th[data-col]').forEach(th => {
+    th.addEventListener('mouseenter', () => {
+      const col = th.dataset.col;
+      table.querySelectorAll(`th[data-col="${col}"], td[data-col="${col}"]`).forEach(el => el.classList.add('highlight-col'));
+    });
+    th.addEventListener('mouseleave', () => {
+      table.querySelectorAll('.highlight-col').forEach(el => el.classList.remove('highlight-col'));
+    });
+  });
+  table.querySelectorAll('tbody tr').forEach(tr => {
+    tr.addEventListener('mouseenter', () => tr.classList.add('highlight-row'));
+    tr.addEventListener('mouseleave', () => tr.classList.remove('highlight-row'));
+  });
+}
+renderMatrix();
+</script>
+</body>
+</html>
