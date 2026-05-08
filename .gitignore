@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Scaffold script docx-text caches (generated, regenerable from source/)
+.cache/
+**/.cache/
