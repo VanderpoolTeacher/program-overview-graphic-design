@@ -23,6 +23,7 @@ tracker is hand-maintained — update the `courses` array in
 | 2 — Existing-materials review | Inspect `../source/` for matching folder; resolve `*-existing-materials-analysis.md` (replace ⚠ notice or fill in inventory) | Filled or "confirmed none" doc |
 | 3 — Source analysis | Fill in `*-source-analysis.md` (DSGN 410 is the canonical example) | Filled doc |
 | 4 — Authoring plan | Fill in `*-authoring-plan.md` listing assignments to author with CLO map and priority | Filled doc |
+| 4b — Capstone course design doc | Copy `templates/capstone-course-design-template.md` and fill it out for this course (Backward Design + 7 pedagogy frameworks). Open via the `Capstone Course Design` GitHub issue template. | Filled doc; pedagogical contract for the course |
 | 5 — Author assignments | Per planned assignment, copy `assignments/00-template-copy.md` and fill it out | One MD per assignment |
 | 6 — Validate | `../scripts/validate-course-design.sh DSGN_NNN` | Pass/fail report |
 | 7 — Review | Walk the author's checklist at the bottom of each assignment | Checked-off lists |
@@ -42,11 +43,14 @@ course-design/
 │   ├── assignment-template.md
 │   ├── source-analysis-template.md
 │   ├── existing-materials-analysis-template.md
-│   └── authoring-plan-template.md
+│   ├── authoring-plan-template.md
+│   └── capstone-course-design-template.md
+├── pedagogy/                  # the 7 framework references
 └── <course-slug>/             # one per course as work progresses
     ├── <course>-source-analysis.md
     ├── <course>-existing-materials-analysis.md
     ├── <course>-authoring-plan.md
+    ├── <course>-capstone-course-design.md
     └── assignments/
         ├── 00-template-copy.md  # fresh seed copy; not counted as a real assignment
         ├── 01-<slug>.md
@@ -67,6 +71,13 @@ course-design/
   maps them to CLOs, and flags gaps. Pre-filled with file inventory.
 - **`authoring-plan-template.md`** — lists the assignments to author for
   a course, mapped to CLOs, with priority and time estimates.
+- **`capstone-course-design-template.md`** — comprehensive course
+  design document built on Backward Design with all 7 pedagogy
+  frameworks deliberately applied. The pedagogical contract for a
+  course; drives every subsequent assignment and rubric. Use the
+  GitHub issue template `.github/ISSUE_TEMPLATE/capstone-course-design.md`
+  to start the work for a new course. DSGN 410 is the canonical
+  worked example.
 
 ## How to use this system with Claude
 
