@@ -46,6 +46,7 @@ Interactive single-page presentation for the Defiance College Graphic Design maj
 |------|---------|
 | `program-overview.html` | Main application (all HTML, CSS, and JS in one file) |
 | `index.html` | Redirect to `program-overview.html` |
+| `source/program-data.md` | Canonical source of truth for program data (MLOs, courses, CLOs, plan of study) |
 
 ## Usage
 
