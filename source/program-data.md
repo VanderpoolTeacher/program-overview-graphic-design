@@ -207,7 +207,79 @@ mlos: [1, 2, 4, 6, 7, 8]
 6. Use AI tools to explore, organize, or visualize historical design content while practicing critical evaluation of AI-generated data.
    → MLOs: 2, 6, 8
 
-<!-- Advanced filled in Task 5, Capstone Task 6 -->
+## DSGN 312 — Packaging Design
+
+```yaml
+level: Advanced
+mlos: [1, 2, 3, 4, 6, 7, 8]
+```
+
+**Purpose.** Consumer product design — structural packaging (folds, dielines, mockups), brand identity in 3D space, materials/sustainability/printing considerations, visual storytelling and shelf impact, regulatory and ethical considerations, and market positioning. Prerequisites: DSGN 114 and 205.
+
+**Course Learning Outcomes**
+
+1. Design functional and visually engaging packaging solutions that communicate brand identity and appeal to specific audiences.
+   → MLOs: 1, 3, 4, 8
+2. Develop dielines, mockups, and 3D visualizations to prototype packaging designs for print or digital presentation.
+   → MLOs: 2, 6
+3. Apply principles of structure, hierarchy, and material consideration to ensure usability, sustainability, and impact.
+   → MLOs: 1, 3, 6
+4. Critique packaging systems based on market relevance, ethical considerations, accessibility, and visual communication.
+   → MLOs: 1, 3, 4, 7, 8
+5. Produce a packaging portfolio piece that demonstrates concept development, iterative design, and technical execution.
+   → MLOs: 6, 2, 4
+6. Use AI-assisted tools to generate or visualize packaging concepts, while critically evaluating their outputs.
+   → MLOs: 2, 6, 8
+
+## DSGN 310 — Corporate Brand Communication
+
+```yaml
+level: Advanced
+mlos: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+**Purpose.** Brand strategy, identity systems, and communication design across platforms — brand identity (logos, visual systems, tone), strategy and positioning, voice and messaging, internal/external communication, consistency across media (print, digital, social, environments), stakeholder communication and brand storytelling, and real-world brand audits or campaigns.
+
+**Course Learning Outcomes**
+
+1. Develop comprehensive brand identity systems that include logos, typography, color, imagery, and tone of voice.
+   → MLOs: 1, 2, 4, 6
+2. Apply branding principles to create communication strategies tailored to target audiences and business goals.
+   → MLOs: 1, 3, 4, 8
+3. Design brand collateral across various media platforms, ensuring consistency and clarity of message.
+   → MLOs: 2, 4, 5, 6
+4. Critically evaluate brand effectiveness through case studies, audience response, and competitor analysis.
+   → MLOs: 1, 3, 7
+5. Collaborate to develop and pitch branding concepts using verbal, visual, and written presentation formats.
+   → MLOs: 6, 7, 8
+6. Use AI tools to assist with brand research, naming, visual development, or campaign ideation while maintaining strategic and ethical oversight.
+   → MLOs: 2, 6, 8
+
+## DSGN 320 — Motion Graphics
+
+```yaml
+level: Advanced
+mlos: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+**Purpose.** Bringing visual design to life through time-based media — principles of motion design (timing, pacing, keyframes, easing), typography in motion, storyboarding and visual narrative, sound and timing integration, animation tools (e.g., After Effects), branding through motion (logo animations, explainer videos), and formats for web/social/broadcast.
+
+**Course Learning Outcomes**
+
+1. Apply principles of animation, timing, and sequencing to create engaging motion graphics.
+   → MLOs: 1, 2, 4
+2. Storyboard and design time-based visual narratives with clear communication goals.
+   → MLOs: 1, 3, 6
+3. Animate typography, imagery, and branding elements using industry-standard software.
+   → MLOs: 2, 4, 6
+4. Integrate audio, pacing, and visual effects to enhance user engagement and storytelling.
+   → MLOs: 4, 6
+5. Critique and revise motion designs based on audience needs and platform context.
+   → MLOs: 3, 5, 6, 7
+6. Use AI tools to assist with motion design tasks such as animation generation, voice syncing, or storyboarding, while applying ethical judgment.
+   → MLOs: 2, 6, 8
+
+<!-- Capstone filled in Task 6 -->
 
 # Plan of Study
 
