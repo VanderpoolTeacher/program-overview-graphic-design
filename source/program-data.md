@@ -375,4 +375,72 @@ mlos: [1, 2, 4, 6, 7, 8]
 
 # Plan of Study
 
-<!-- Filled in Task 7 -->
+## Year 1 — Freshman
+
+### Fall 2025 (14 cr)
+- ART 110 — 2D Fundamentals (3 cr) [major]
+- DSGN 105 — Digital Imaging (3 cr) [major]
+- FYE 100 — College Engagement Sem. (2 cr) [gened]
+- HUM 100 — Reacting to the Past (3 cr) [gened]
+- Math Gen Ed — Student Choice (3 cr) [gened]
+
+### Spring 2026 (16 cr)
+- ART 112 — Drawing (3 cr) [major]
+- ART 215 — Digital Photography (3 cr) [major]
+- COMM 120 — Intro to Human Comm (3 cr) [gened]
+- DSGN 114 — Intro to Graphic Design (3 cr) [major]
+- ENGL 125 — Composition I (3 cr) [gened]
+- GEN 101 — Jacket Journey (1 cr) [gened]
+
+## Year 2 — Sophomore
+
+### Fall 2026 (16 cr)
+- DSGN 107 — Digital Illustration (3 cr) [major]
+- DSGN 205 — Page Layout (3 cr) [major]
+- ENGL 225 — Composition II (3 cr) [gened]
+- Science Gen Ed — Student Choice (4 cr) [gened]
+- Open Elective — Student Choice (3 cr) [elective]
+
+### Spring 2027 (14 cr)
+- COMM 260 — Digital Media Production (3 cr) [major]
+- DSGN 220 — Design Thinking (1 cr) [major]
+- DSGN 230 — Design History (1 cr) [major]
+- HPM Gen Ed — Student Choice (3 cr) [gened]
+- Soc Sci Gen Ed — Student Choice (3 cr) [gened]
+- Open Elective — Student Choice (3 cr) [elective]
+- GEN 201 — Jacket Journey (1 cr) [gened]
+
+## Year 3 — Junior
+
+### Fall 2027 (14 cr)
+- CSCI 110 — Introduction to Web Dev. (2 cr) [major]
+- DSGN 312 — Packaging Design (3 cr) [major]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+
+### Spring 2028 (16 cr)
+- DSGN 310 — Corporate Brand Comm. (3 cr) [major]
+- DSGN 320 — Motion Graphics (3 cr) [major]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- GEN 301 — Jacket Journey (1 cr) [gened]
+
+## Year 4 — Senior
+
+### Fall 2028 (16 cr)
+- DSGN 412 — Portfolio Design (1 cr) [major]
+- DSGN 498 — Senior Capstone (3 cr) [major]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+
+### Spring 2029 (14 cr)
+- DSGN 410 — Bus. of Graphic Design (1 cr) [major]
+- DSGN 491 — Design Internship (3 cr) [major]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- Open Elective — Student Choice (3 cr) [elective]
+- GEN 401 — Jacket Journey (1 cr) [gened]
