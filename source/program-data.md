@@ -279,7 +279,99 @@ mlos: [1, 2, 3, 4, 5, 6, 7, 8]
 6. Use AI tools to assist with motion design tasks such as animation generation, voice syncing, or storyboarding, while applying ethical judgment.
    → MLOs: 2, 6, 8
 
-<!-- Capstone filled in Task 6 -->
+## DSGN 412 — Portfolio Design
+
+```yaml
+level: Capstone
+mlos: [1, 2, 3, 4, 6, 7, 8]
+```
+
+**Purpose.** Capstone-adjacent course focused on curating, refining, and presenting a professional design portfolio for career launch — selecting and refining best work, writing case studies and project summaries, articulating design process and problem-solving, designing a cohesive visual and verbal identity, developing résumés/cover letters/online presence, preparing for interviews and critiques, and receiving peer/faculty/industry feedback.
+
+**Course Learning Outcomes**
+
+1. Curate a portfolio that demonstrates conceptual strength, technical skill, and process fluency across diverse design projects.
+   → MLOs: 1, 2, 6
+2. Write clear and compelling case studies that explain design intent, research, and outcomes.
+   → MLOs: 1, 3, 6, 7
+3. Design and present a cohesive personal brand identity across print and digital platforms.
+   → MLOs: 4, 6, 8
+4. Use peer and mentor feedback to revise portfolio materials for clarity, alignment, and professional impact.
+   → MLOs: 6, 7
+5. Prepare for design interviews through presentations, critiques, and storytelling strategies.
+   → MLOs: 6, 7, 8
+6. Use AI tools to support portfolio development, such as refining visuals, writing drafts, or simulating interviews.
+   → MLOs: 2, 6, 8
+
+## DSGN 498 — Senior Capstone
+
+```yaml
+level: Capstone
+mlos: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+**Purpose.** Culminating course where students apply cumulative skills to a major self-directed or client-based project, with at least one outcome explicitly visualizing research, process, or outcomes. Students define a comprehensive design problem, conduct user/client/market research, apply iterative design and feedback, manage timelines and deliverables, integrate multiple competencies (UX/UI, branding, motion, etc.), and present in written, visual, and verbal formats.
+
+**Course Learning Outcomes**
+
+1. Propose and scope a self-directed design project that addresses a real-world problem or opportunity.
+   → MLOs: 1, 3, 8
+2. Conduct research and stakeholder analysis to inform design decisions and measure impact.
+   → MLOs: 1, 3, 6
+3. Apply advanced design methods to develop, prototype, and refine a comprehensive design solution.
+   → MLOs: 1, 2, 4
+4. Visualize data and insights clearly and persuasively to support design intent and outcomes.
+   → MLOs: 1, 5, 6
+5. Present the capstone project through written, visual, and verbal formats tailored to professional audiences.
+   → MLOs: 6, 7, 8
+6. Use AI tools to support project planning, research synthesis, or asset development, with ethical and strategic oversight.
+   → MLOs: 2, 6, 8
+
+## DSGN 410 — The Business of Graphic Design
+
+```yaml
+level: Capstone
+mlos: [1, 2, 3, 5, 6, 7, 8]
+```
+
+**Purpose.** Preparing students for the freelance, agency, and entrepreneurial side of the industry — pricing, contracts, intellectual property, project management and client relations, business models (freelance, agency, in-house), marketing and self-promotion, invoicing/proposals/legal basics, ethics and professional standards, and creative entrepreneurship.
+
+**Course Learning Outcomes**
+
+1. Describe key business models and career pathways in the graphic design industry, including freelancing, agency work, and entrepreneurship.
+   → MLOs: 6, 8
+2. Develop project budgets, timelines, and proposals in response to client or market needs.
+   → MLOs: 3, 6, 8
+3. Draft contracts, invoices, and usage rights agreements in alignment with industry standards.
+   → MLOs: 6, 7, 8
+4. Apply ethical, legal, and professional practices to client relationships, self-promotion, and content creation.
+   → MLOs: 1, 6, 7, 8
+5. Communicate business strategy through branded content, data visualizations, and presentations.
+   → MLOs: 5, 6, 7, 8
+6. Use AI tools to support business operations such as estimating, content drafting, client comms, or market research.
+   → MLOs: 2, 6, 8
+
+## DSGN 491 — Design Internship
+
+```yaml
+level: Capstone
+mlos: [1, 2, 4, 6, 7, 8]
+```
+
+**Purpose.** Real-world application of accumulated skills in a professional or client setting — experiential learning and professional development through working in a design firm, agency, in-house team, or freelance/client-based setting; applying design thinking and technical skills in real-world contexts; building professional habits, communication, and project management; receiving feedback from supervisors and reflecting on growth; and preparing for post-graduation employment or entrepreneurship.
+
+**Course Learning Outcomes**
+
+1. Apply design skills and tools in a professional work environment to meet client or team goals.
+   → MLOs: 1, 2, 4, 6
+2. Demonstrate professional communication, time management, and collaboration skills in a team-based or client-facing setting.
+   → MLOs: 6, 7, 8
+3. Reflect on the internship experience to assess personal strengths, challenges, and career goals.
+   → MLOs: 6, 8
+4. Document project contributions and design process as part of a professional portfolio.
+   → MLOs: 6, 7
+5. Use AI tools to support work tasks such as prototyping, research, or presentation development while maintaining professional standards.
+   → MLOs: 2, 6, 8
 
 # Plan of Study
 
