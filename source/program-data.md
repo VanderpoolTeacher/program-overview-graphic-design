@@ -135,7 +135,79 @@ mlos: [1, 2, 3, 4, 5, 6, 7, 8]
 7. Use AI-assisted tools to generate, refine, or remix illustrative content while applying ethical and creative judgment.
    → MLOs: 2, 6, 8
 
-<!-- Intermediate filled in Task 4, Advanced Task 5, Capstone Task 6 -->
+## DSGN 205 — Page Layout
+
+```yaml
+level: Intermediate
+mlos: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+**Purpose.** Organizing text and images on the page (print or digital) using layout, typography, and grid systems — editorial and publication design, multi-page documents, typographic hierarchy, grids and modular structures, file prep, accessibility and readability.
+
+**Course Learning Outcomes**
+
+1. Design multi-page layouts using typographic hierarchy, alignment, spacing, and grid systems.
+   → MLOs: 1, 2, 4, 8
+2. Apply principles of visual organization to enhance readability, navigation, and user engagement in print and digital formats.
+   → MLOs: 1, 3, 4, 5
+3. Prepare layout files for professional output, including proper use of margins, bleeds, resolution, and file formats.
+   → MLOs: 2, 6
+4. Integrate imagery and text to communicate clear, consistent, and audience-aware messages.
+   → MLOs: 1, 3, 5, 6
+5. Critique and revise layouts based on feedback, focusing on clarity, hierarchy, and communication goals.
+   → MLOs: 1, 6, 7
+6. Use AI-assisted tools for layout generation or content styling while applying ethical and creative oversight.
+   → MLOs: 2, 6, 8
+
+## DSGN 220 — Design Thinking
+
+```yaml
+level: Intermediate
+mlos: [1, 2, 3, 4, 6, 7, 8]
+```
+
+**Purpose.** Cornerstone course in human-centered design as a structured process — empathy and user research, problem definition, ideation (e.g., brainstorming, SCAMPER), rapid prototyping and testing, feedback loops, systems thinking and stakeholder mapping, with applications in social innovation, UX, and business.
+
+**Course Learning Outcomes**
+
+1. Apply the design thinking process—including empathy, definition, ideation, prototyping, and testing—to solve complex user-centered challenges.
+   → MLOs: 1, 3, 4
+2. Conduct user research and stakeholder analysis to inform the framing of design problems.
+   → MLOs: 1, 3
+3. Generate and evaluate multiple design concepts through rapid ideation and feedback cycles.
+   → MLOs: 1, 6, 7
+4. Develop low- and high-fidelity prototypes that explore possible solutions and communicate ideas effectively.
+   → MLOs: 2, 4, 6
+5. Collaborate within interdisciplinary teams to iterate and refine design concepts based on user insights.
+   → MLOs: 3, 6, 7
+6. Use AI tools to assist in ideation, prototyping, or user research while applying ethical design practices.
+   → MLOs: 2, 3, 6, 8
+
+## DSGN 230 — Design History
+
+```yaml
+level: Intermediate
+mlos: [1, 2, 4, 6, 7, 8]
+```
+
+**Purpose.** Historical evolution of graphic design — major movements and key figures (Bauhaus, Swiss, Postmodernism, Digital Age), the relationship between design and social/political/technological shifts, critical analysis of design in context, and how historical knowledge informs contemporary practice.
+
+**Course Learning Outcomes**
+
+1. Describe major historical movements, styles, and figures in graphic design from the 19th century to the present.
+   → MLOs: 1, 6
+2. Analyze how social, political, and technological contexts have shaped graphic design across time.
+   → MLOs: 1, 6
+3. Evaluate the visual language and communicative strategies used in historical design works.
+   → MLOs: 1, 4
+4. Draw connections between historical design trends and contemporary practices or challenges.
+   → MLOs: 1, 6, 8
+5. Communicate research findings through written, visual, or oral presentations with clarity and critical insight.
+   → MLOs: 6, 7
+6. Use AI tools to explore, organize, or visualize historical design content while practicing critical evaluation of AI-generated data.
+   → MLOs: 2, 6, 8
+
+<!-- Advanced filled in Task 5, Capstone Task 6 -->
 
 # Plan of Study
 
