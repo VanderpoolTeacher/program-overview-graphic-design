@@ -7,7 +7,7 @@
 > Pairs with `dsgn-312-source-analysis.md` and
 > `dsgn-312-authoring-plan.md`.
 
-⚠ **No existing source folder detected** under `source/`. Confirm by inspecting `source/` manually before declaring "no existing materials," then replace this notice with "Confirmed none on YYYY-MM-DD."
+**Existing materials:** Confirmed none on 2026-05-08 (smoke-test scaffolding).
 
 ## Inventory
 
