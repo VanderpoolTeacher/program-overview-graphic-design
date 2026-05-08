@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Design Progress — DC Graphic Design BA</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --bg: #141416;
+    --surface: #1e1e22;
+    --surface2: #28282e;
+    --border: #3a3a42;
+    --text: #f0f0f0;
+    --text-dim: #CCC4A8;
+    --heading: #f0f0f0;
+    --accent: #CCC4A8;
+    --accent-glow: rgba(204,196,168,0.15);
+    --green: #6dbf7b;
+    --orange: #e8a04c;
+    --purple: #7b5ea7;
+    --cyan: #4a8ad4;
+    --rose: #c97088;
+    --shadow: rgba(0,0,0,0.4);
+  }
+  [data-theme="light"] {
+    --bg: #f5f4f2;
+    --surface: #ffffff;
+    --surface2: #eeece8;
+    --border: #d8d5ce;
+    --text: #221338;
+    --text-dim: #5a4d68;
+    --heading: #4F2683;
+    --accent: #4F2683;
+    --accent-glow: rgba(79,38,131,0.1);
+    --green: #3a8a4a;
+    --orange: #c07a20;
+    --purple: #4F2683;
+    --cyan: #2F61AE;
+    --rose: #a04060;
+    --shadow: rgba(34,19,56,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg); color: var(--text);
+    font-size: 12pt; line-height: 1.5;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center;
+    height: 56px; gap: 1rem;
+  }
+  nav .logo { font-weight: 700; color: var(--accent); }
+  nav .spacer { flex: 1; }
+  nav .theme-toggle {
+    cursor: pointer; padding: 0.5rem 0.75rem;
+    border-radius: 8px; color: var(--text-dim);
+  }
+  nav .theme-toggle:hover { background: var(--surface); color: var(--text); }
+  main { padding: 80px 2rem 4rem; max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--heading); }
+  .subtitle { color: var(--text-dim); margin-bottom: 2rem; }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin-bottom: 2rem;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem; text-align: center;
+  }
+  .stat-num { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+  .stat-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 0.25rem; }
+  table.tracker {
+    width: 100%; border-collapse: collapse;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  table.tracker th, table.tracker td {
+    text-align: left; padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  table.tracker th {
+    background: var(--surface2); color: var(--text-dim);
+    font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  table.tracker tbody tr:last-child td { border-bottom: none; }
+  table.tracker tbody tr:hover { background: var(--accent-glow); }
+  .pill {
+    display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 500;
+  }
+  .pill-0 { background: rgba(127,142,170,0.2); color: var(--text-dim); }
+  .pill-1 { background: rgba(74,138,212,0.2); color: var(--cyan); }
+  .pill-2 { background: rgba(123,94,167,0.2); color: var(--purple); }
+  .pill-3 { background: rgba(232,160,76,0.2); color: var(--orange); }
+  .pill-4 { background: rgba(232,160,76,0.2); color: var(--orange); }
+  .pill-5 { background: rgba(201,112,136,0.2); color: var(--rose); }
+  .pill-6 { background: rgba(109,191,123,0.2); color: var(--green); }
+  .pill-7 { background: rgba(109,191,123,0.2); color: var(--green); }
+  .pill-8 { background: rgba(109,191,123,0.3); color: var(--green); }
+  .notes { color: var(--text-dim); font-size: 0.9rem; }
+  .footer { color: var(--text-dim); font-size: 0.85rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Course Design Progress</div>
+  <div class="spacer"></div>
+  <div class="theme-toggle" id="theme-toggle" title="Toggle light/dark">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </div>
+</nav>
+<main>
+  <h1>Course Design Progress</h1>
+  <p class="subtitle">Internal authoring tracker — DC Graphic Design BA. Single source of truth for per-course status. Update inline below as work progresses.</p>
+
+  <div class="stats-row" id="stats"></div>
+
+  <table class="tracker">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Title</th>
+        <th>Stage</th>
+        <th>Assignments</th>
+        <th>Notes / blockers</th>
+      </tr>
+    </thead>
+    <tbody id="tracker-body"></tbody>
+  </table>
+
+  <p class="footer">Update the <code>courses</code> array in this file's source to advance a stage. Then re-open or refresh the page. Stages: 0 not-started · 1 scaffold · 2 existing-materials · 3 source-analysis · 4 authoring-plan · 5 authoring · 6 validate · 7 review · 8 published.</p>
+</main>
+<script>
+const STAGES = [
+  "0 — not started",
+  "1 — scaffold",
+  "2 — existing-materials review",
+  "3 — source analysis",
+  "4 — authoring plan",
+  "5 — authoring",
+  "6 — validate",
+  "7 — review",
+  "8 — published"
+];
+
+// SOURCE OF TRUTH for tracker. Update by hand as work advances.
+const courses = [
+  { code: "DSGN 114", title: "Intro to Graphic Design", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 105", title: "Digital Imaging", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 107", title: "Digital Illustration", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 205", title: "Page Layout", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 220", title: "Design Thinking", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 230", title: "Design History", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 312", title: "Packaging Design", stage: 1, assignments: 0, planned: null, notes: "Scaffolded as smoke test for the system." },
+  { code: "DSGN 310", title: "Corporate Brand Communication", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 320", title: "Motion Graphics", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 412", title: "Portfolio Design", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 498", title: "Senior Capstone", stage: 0, assignments: 0, planned: null, notes: "" },
+  { code: "DSGN 410", title: "The Business of Graphic Design", stage: 4, assignments: 0, planned: null,
+    notes: "Source + materials analysis complete. Gaps flagged: data-viz, proposal writing, AI-as-tool, ethics scenario. Authoring plan TBD." },
+  { code: "DSGN 491", title: "Design Internship", stage: 0, assignments: 0, planned: null, notes: "" }
+];
+
+function render() {
+  const tbody = document.getElementById('tracker-body');
+  tbody.innerHTML = courses.map(c => `
+    <tr>
+      <td><strong>${c.code}</strong></td>
+      <td>${c.title}</td>
+      <td><span class="pill pill-${c.stage}">${STAGES[c.stage]}</span></td>
+      <td>${c.assignments}${c.planned !== null ? ' / ' + c.planned : ''}</td>
+      <td class="notes">${c.notes || '—'}</td>
+    </tr>
+  `).join('');
+
+  const total = courses.length;
+  const started = courses.filter(c => c.stage > 0).length;
+  const validated = courses.filter(c => c.stage >= 6).length;
+  const totalAssignments = courses.reduce((s, c) => s + (c.assignments || 0), 0);
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total courses</div></div>
+    <div class="stat-card"><div class="stat-num">${started}</div><div class="stat-label">Courses started</div></div>
+    <div class="stat-card"><div class="stat-num">${validated}</div><div class="stat-label">Validated</div></div>
+    <div class="stat-card"><div class="stat-num">${totalAssignments}</div><div class="stat-label">Assignments authored</div></div>
+  `;
+}
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'light' ? 'dark' : 'light');
+});
+
+render();
+</script>
+</body>
+</html>
