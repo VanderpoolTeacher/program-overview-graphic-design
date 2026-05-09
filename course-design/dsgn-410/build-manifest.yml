@@ -1,0 +1,201 @@
+# DSGN 410 Build Manifest
+#
+# Lifecycle: Design → Development → Deployed.
+# Within each phase, artifacts are grouped by category.
+# The scan script (scripts/scan-course-build.sh) reads this file,
+# checks the filesystem and git, queries GitHub issues (when the
+# `issue:` field is set), and emits a JSON file that the HTML
+# dashboard consumes.
+#
+# State auto-derivation rules (override with `state:` only when
+# auto-derivation is wrong):
+#   1. file exists → done
+#   2. file missing + linked issue is OPEN with "blocked" label → blocked
+#   3. file missing + linked issue is OPEN → in-progress
+#   4. file missing + no issue (or closed issue) → not-started
+
+course: "DSGN 410 — The Business of Graphic Design"
+slug: dsgn-410
+first_run: "Spring 2029"
+program_stage: 4
+
+phases:
+
+  - name: Design
+    description: "What the course is for, who it's for, and how it's structured. The thinking before the building."
+    categories:
+
+      - name: Course-level design
+        artifacts:
+          - name: Source analysis
+            file: dsgn-410-source-analysis.md
+          - name: Existing-materials analysis
+            file: dsgn-410-existing-materials-analysis.md
+          - name: Authoring plan
+            file: dsgn-410-authoring-plan.md
+            notes: Source of truth for the 10 assignments to author
+          - name: Course design document
+            file: dsgn-410-course-design-document.md
+            notes: Backward Design + 7 pedagogy frameworks
+          - name: Build manifest
+            file: build-manifest.yml
+            notes: This file — drives the dashboard
+
+      - name: Pedagogical scenarios (pre-class)
+        artifacts:
+          - name: Freelance — Sam (Tuesday)
+            file: resources/freelance-day-in-the-life.md
+          - name: Agency — Diego (Wednesday)
+            file: resources/agency-day-in-the-life.md
+          - name: In-house — Imani (Thursday)
+            file: resources/in-house-day-in-the-life.md
+          - name: Cooperative — Mei (Thursday)
+            file: resources/cooperative-day-in-the-life.md
+          - name: Hybrid — Jamie (Monday)
+            file: resources/hybrid-day-in-the-life.md
+
+  - name: Development
+    description: "The actual course materials students and the instructor use. Lessons, assignments, references."
+    categories:
+
+      - name: Summative
+        artifacts:
+          - name: 01 — Practice Launch + Mock Engagement (summative)
+            file: assignments/01-practice-launch-summative.md
+            notes: 7-min live pitch + 6-scenario Event 2 deck embedded
+
+      - name: Weekly modules
+        artifacts:
+          - name: Week 1 — Course intro · practice models
+            file: weeks/week-01.md
+          - name: Week 2 — Career pathways
+            file: weeks/week-02.md
+          - name: Week 3 — Your practice model
+            file: weeks/week-03.md
+          - name: Week 4 — Project intake + scope
+            file: weeks/week-04.md
+          - name: Week 5 — Proposals, budgets, timelines
+            file: weeks/week-05.md
+          - name: Week 6 — Contracts + IP
+            file: weeks/week-06.md
+          - name: Week 7 — Invoicing + finance
+            file: weeks/week-07.md
+          - name: Week 8 — Ethics in practice
+            file: weeks/week-08.md
+          - name: Week 9 — Comm + AI workflow
+            file: weeks/week-09.md
+          - name: Week 10 — Summative kickoff
+            file: weeks/week-10.md
+          - name: Week 11 — Practice + intake polished
+            file: weeks/week-11.md
+          - name: Week 12 — Event 1 (Budget Cut)
+            file: weeks/week-12.md
+          - name: Week 13 — Lifecycle artifacts
+            file: weeks/week-13.md
+          - name: Week 14 — Event 2 (student-chosen scenario)
+            file: weeks/week-14.md
+          - name: Week 15 — Pitch + AI + reflection integration
+            file: weeks/week-15.md
+          - name: Week 16 — Final pitch day
+            file: weeks/week-16.md
+
+      - name: Formative assignments
+        artifacts:
+          - name: 0 — Onboarding (syllabus + book selection)
+            file: assignments/00-onboarding.md
+            issue: 5
+            notes: Re-scope existing draft (light)
+          - name: 1 — Practice models reflection
+            file: assignments/02-practice-models-reflection.md
+            issue: 5
+            notes: NEW — short prompt
+          - name: 2 — Career profile
+            file: assignments/03-career-profile.md
+            issue: 5
+            notes: Re-scope Career Mapping.docx; add non-default-model requirement
+          - name: 3 — Practice statement (formative draft)
+            file: assignments/04-practice-statement.md
+            issue: 5
+            notes: NEW — direct precursor to summative Part A
+          - name: 4 — Mock intake email exchange
+            file: assignments/05-intake-email.md
+            issue: 5
+            notes: Partial re-scope of Professional Communication.docx
+          - name: 5 — Proposal + budget + timeline
+            file: assignments/06-proposal-package.md
+            issue: 5
+            notes: Partial re-scope of Project Management Plan.docx
+          - name: 6 — Contract excerpt
+            file: assignments/07-contract-excerpt.md
+            issue: 5
+            notes: Split from Legal and Financial Responsibilities.docx
+          - name: 7 — Sample invoice
+            file: assignments/08-sample-invoice.md
+            issue: 5
+            notes: Split from Legal and Financial Responsibilities.docx
+          - name: 8 — Ethics scenario response
+            file: assignments/09-ethics-scenario.md
+            issue: 5
+            notes: Partial re-scope of Professional Communication.docx
+          - name: 9 — Pitch sketch + AI workflow draft
+            file: assignments/10-pitch-and-ai-workflow.md
+            issue: 5
+            notes: Combine + tighten Self-Marketing Strategy.docx
+
+      - name: In-class materials
+        artifacts:
+          - name: Sector-prompt handout (Week 5 interactive)
+            file: resources/sector-prompts.md
+            notes: 3 sector prompts for Rate-Research Race; refresh annually
+          - name: Four-strategies worksheet (Week 12 interactive)
+            file: resources/four-strategies-worksheet.md
+            notes: Decision-tree pager for budget cut
+          - name: Practice-model survey deck (Week 1 lecture)
+            file: resources/practice-model-survey-deck.pdf
+            notes: Slides for the 5-model lecture
+
+      - name: Reference materials
+        artifacts:
+          - name: Curriculum resources doc
+            file: resources/curriculum-resources.md
+            notes: 985 lines, 16 sections; needs yearly currency review
+          - name: Anonymized real freelance contract (Week 6)
+            file: resources/anonymized-contract.pdf
+            issue: 7
+            notes: External — needs to be sourced
+          - name: Anonymized real proposal (Week 5)
+            file: resources/anonymized-proposal.pdf
+            issue: 8
+            notes: External — needs to be sourced
+
+  - name: Deployed
+    description: "Running the course in the real world — coordination, pilot, iteration."
+    categories:
+
+      - name: External coordination
+        artifacts:
+          - name: DSGN 491 internship concurrency confirmed (Spring 2029)
+            issue: 9
+            notes: Needs internship coordinator; design assumption for the summative
+          - name: Week 16 guest practitioner identified
+            issue: 10
+            notes: Cultivate over time; non-default-model designer preferred
+          - name: AI-tool currency review (yearly)
+            state: not-started
+            notes: Before Spring 2029 first run; ongoing thereafter
+          - name: Multi-instructor calibration plan
+            state: not-started
+            notes: Only relevant when course is taught by multiple faculty
+
+      - name: Pilot + iteration
+        artifacts:
+          - name: First-run scheduled (Spring 2029)
+            state: not-started
+          - name: Student feedback collection plan
+            state: not-started
+            notes: Safe instrument; what to ask, when, how
+          - name: Faculty observer feedback (if multiple sections)
+            state: not-started
+          - name: Iteration log (post-first-run)
+            state: not-started
+            notes: At least one piece of course material revised based on feedback

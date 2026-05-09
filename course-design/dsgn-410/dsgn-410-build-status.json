@@ -1,0 +1,608 @@
+{
+  "course": "DSGN 410 \u2014 The Business of Graphic Design",
+  "slug": "dsgn-410",
+  "first_run": "Spring 2029",
+  "program_stage": 4,
+  "scanned_at": "2026-05-09T07:21:54.069579-04:00",
+  "gh_available": true,
+  "totals": {
+    "artifacts": 50,
+    "done": 27,
+    "in-progress": 10,
+    "not-started": 9,
+    "blocked": 4,
+    "iterated": 0
+  },
+  "categories": [
+    {
+      "name": "Course-level metadata",
+      "artifacts": [
+        {
+          "name": "Source analysis",
+          "file": "dsgn-410-source-analysis.md",
+          "exists": true,
+          "last_modified": "2026-05-08T09:40:36-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Existing-materials analysis",
+          "file": "dsgn-410-existing-materials-analysis.md",
+          "exists": true,
+          "last_modified": "2026-05-08T11:30:52-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Authoring plan",
+          "file": "dsgn-410-authoring-plan.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:13:15-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": "Source of truth for the 10 assignments to author"
+        },
+        {
+          "name": "Course design document",
+          "file": "dsgn-410-course-design-document.md",
+          "exists": true,
+          "last_modified": "2026-05-08T21:09:26-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": "Backward Design + 7 pedagogy frameworks"
+        }
+      ]
+    },
+    {
+      "name": "Summative",
+      "artifacts": [
+        {
+          "name": "01 \u2014 Practice Launch + Mock Engagement (summative)",
+          "file": "assignments/01-practice-launch-summative.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:26:25-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": "7-min live pitch + 6-scenario Event 2 deck embedded"
+        }
+      ]
+    },
+    {
+      "name": "Weekly modules",
+      "artifacts": [
+        {
+          "name": "Week 1 \u2014 Course intro \u00b7 practice models",
+          "file": "weeks/week-01.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:06:54-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 2 \u2014 Career pathways",
+          "file": "weeks/week-02.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 3 \u2014 Your practice model",
+          "file": "weeks/week-03.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 4 \u2014 Project intake + scope",
+          "file": "weeks/week-04.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 5 \u2014 Proposals, budgets, timelines",
+          "file": "weeks/week-05.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:17:03-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 6 \u2014 Contracts + IP",
+          "file": "weeks/week-06.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 7 \u2014 Invoicing + finance",
+          "file": "weeks/week-07.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 8 \u2014 Ethics in practice",
+          "file": "weeks/week-08.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 9 \u2014 Comm + AI workflow",
+          "file": "weeks/week-09.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 10 \u2014 Summative kickoff",
+          "file": "weeks/week-10.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 11 \u2014 Practice + intake polished",
+          "file": "weeks/week-11.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 12 \u2014 Event 1 (Budget Cut)",
+          "file": "weeks/week-12.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:25:34-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 13 \u2014 Lifecycle artifacts",
+          "file": "weeks/week-13.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 14 \u2014 Event 2 (student-chosen scenario)",
+          "file": "weeks/week-14.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 15 \u2014 Pitch + AI + reflection integration",
+          "file": "weeks/week-15.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Week 16 \u2014 Final pitch day",
+          "file": "weeks/week-16.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:42:23-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "Formative assignments",
+      "artifacts": [
+        {
+          "name": "0 \u2014 Onboarding (syllabus + book selection)",
+          "file": "assignments/00-onboarding.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Re-scope existing draft (light)"
+        },
+        {
+          "name": "1 \u2014 Practice models reflection",
+          "file": "assignments/02-practice-models-reflection.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "NEW \u2014 short prompt"
+        },
+        {
+          "name": "2 \u2014 Career profile",
+          "file": "assignments/03-career-profile.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Re-scope Career Mapping.docx; add non-default-model requirement"
+        },
+        {
+          "name": "3 \u2014 Practice statement (formative draft)",
+          "file": "assignments/04-practice-statement.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "NEW \u2014 direct precursor to summative Part A"
+        },
+        {
+          "name": "4 \u2014 Mock intake email exchange",
+          "file": "assignments/05-intake-email.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Partial re-scope of Professional Communication.docx"
+        },
+        {
+          "name": "5 \u2014 Proposal + budget + timeline",
+          "file": "assignments/06-proposal-package.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Partial re-scope of Project Management Plan.docx"
+        },
+        {
+          "name": "6 \u2014 Contract excerpt",
+          "file": "assignments/07-contract-excerpt.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Split from Legal and Financial Responsibilities.docx"
+        },
+        {
+          "name": "7 \u2014 Sample invoice",
+          "file": "assignments/08-sample-invoice.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Split from Legal and Financial Responsibilities.docx"
+        },
+        {
+          "name": "8 \u2014 Ethics scenario response",
+          "file": "assignments/09-ethics-scenario.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Partial re-scope of Professional Communication.docx"
+        },
+        {
+          "name": "9 \u2014 Pitch sketch + AI workflow draft",
+          "file": "assignments/10-pitch-and-ai-workflow.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": 5,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/5",
+          "state": "in-progress",
+          "notes": "Combine + tighten Self-Marketing Strategy.docx"
+        }
+      ]
+    },
+    {
+      "name": "Pre-class scenarios",
+      "artifacts": [
+        {
+          "name": "Freelance \u2014 Sam (Tuesday)",
+          "file": "resources/freelance-day-in-the-life.md",
+          "exists": true,
+          "last_modified": "2026-05-08T22:55:05-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Agency \u2014 Diego (Wednesday)",
+          "file": "resources/agency-day-in-the-life.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:06:54-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "In-house \u2014 Imani (Thursday)",
+          "file": "resources/in-house-day-in-the-life.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:06:54-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Cooperative \u2014 Mei (Thursday)",
+          "file": "resources/cooperative-day-in-the-life.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:06:54-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        },
+        {
+          "name": "Hybrid \u2014 Jamie (Monday)",
+          "file": "resources/hybrid-day-in-the-life.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:06:54-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "Resources & reference",
+      "artifacts": [
+        {
+          "name": "curriculum-resources.md",
+          "file": "resources/curriculum-resources.md",
+          "exists": true,
+          "last_modified": "2026-05-08T23:26:25-04:00",
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "done",
+          "notes": "985 lines, 16 sections; needs yearly currency review"
+        },
+        {
+          "name": "Anonymized real freelance contract (Week 6)",
+          "file": "resources/anonymized-contract.pdf",
+          "exists": false,
+          "last_modified": null,
+          "issue": 7,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/7",
+          "state": "blocked",
+          "notes": "Needs to be sourced from instructor's network or pre-cleared sample"
+        },
+        {
+          "name": "Anonymized real proposal (Week 5)",
+          "file": "resources/anonymized-proposal.pdf",
+          "exists": false,
+          "last_modified": null,
+          "issue": 8,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/8",
+          "state": "blocked",
+          "notes": "Same \u2014 sourcing required"
+        },
+        {
+          "name": "Sector-prompt handout (Week 5)",
+          "file": "resources/sector-prompts.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "3 sector prompts for Rate-Research Race; refresh annually"
+        },
+        {
+          "name": "Four-strategies worksheet (Week 12)",
+          "file": "resources/four-strategies-worksheet.md",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "Decision-tree pager for budget cut"
+        },
+        {
+          "name": "Practice-model survey deck (Week 1)",
+          "file": "resources/practice-model-survey-deck.pdf",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "Slides for the 5-model lecture"
+        }
+      ]
+    },
+    {
+      "name": "External coordination",
+      "artifacts": [
+        {
+          "name": "DSGN 491 internship concurrency confirmed",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": 9,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/9",
+          "state": "blocked",
+          "notes": "Spring 2029 \u2014 needs internship coordinator"
+        },
+        {
+          "name": "Week 16 guest practitioner identified",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": 10,
+          "issue_state": "open",
+          "issue_url": "https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/10",
+          "state": "blocked",
+          "notes": "Cultivate over time; non-default-model designer preferred"
+        },
+        {
+          "name": "AI-tool currency review (yearly)",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "Before Spring 2029 first run"
+        },
+        {
+          "name": "Multi-instructor calibration plan",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "Only relevant when multiple sections"
+        }
+      ]
+    },
+    {
+      "name": "Pilot & iteration",
+      "artifacts": [
+        {
+          "name": "First-run scheduled",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": "Spring 2029 per Plan of Study"
+        },
+        {
+          "name": "Student feedback collection plan",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": ""
+        },
+        {
+          "name": "Faculty observer feedback (if multiple sections)",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": ""
+        },
+        {
+          "name": "Iteration log (post-first-run)",
+          "file": "",
+          "exists": false,
+          "last_modified": null,
+          "issue": null,
+          "issue_state": null,
+          "issue_url": null,
+          "state": "not-started",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

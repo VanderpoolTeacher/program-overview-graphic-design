@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSGN 410 — Build Status</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --bg: #141416;
+    --surface: #1e1e22;
+    --surface2: #28282e;
+    --border: #3a3a42;
+    --text: #f0f0f0;
+    --text-dim: #CCC4A8;
+    --heading: #f0f0f0;
+    --accent: #CCC4A8;
+    --accent-glow: rgba(204,196,168,0.15);
+    --green: #6dbf7b;
+    --orange: #e8a04c;
+    --purple: #7b5ea7;
+    --cyan: #4a8ad4;
+    --rose: #c97088;
+    --grey: #7F8EAA;
+    --shadow: rgba(0,0,0,0.4);
+  }
+  [data-theme="light"] {
+    --bg: #f5f4f2;
+    --surface: #ffffff;
+    --surface2: #eeece8;
+    --border: #d8d5ce;
+    --text: #221338;
+    --text-dim: #5a4d68;
+    --heading: #4F2683;
+    --accent: #4F2683;
+    --accent-glow: rgba(79,38,131,0.1);
+    --green: #3a8a4a;
+    --orange: #c07a20;
+    --purple: #4F2683;
+    --cyan: #2F61AE;
+    --rose: #a04060;
+    --grey: #7F8EAA;
+    --shadow: rgba(34,19,56,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg); color: var(--text);
+    font-size: 12pt; line-height: 1.5;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center;
+    height: 56px; gap: 1rem;
+  }
+  nav .logo { font-weight: 700; color: var(--accent); }
+  nav .crumb { color: var(--text-dim); font-size: 0.9rem; }
+  nav .crumb a { color: var(--text-dim); text-decoration: none; }
+  nav .crumb a:hover { color: var(--text); }
+  nav .spacer { flex: 1; }
+  nav .theme-toggle {
+    cursor: pointer; padding: 0.5rem 0.75rem;
+    border-radius: 8px; color: var(--text-dim);
+  }
+  nav .theme-toggle:hover { background: var(--surface); color: var(--text); }
+  main { padding: 80px 2rem 4rem; max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin-bottom: 0.25rem; color: var(--heading); }
+  .subtitle { color: var(--text-dim); margin-bottom: 2rem; font-size: 1rem; }
+  .meta-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem;
+  }
+  .meta-row .meta-item { color: var(--text-dim); }
+  .meta-row .meta-item strong { color: var(--text); }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem; margin-bottom: 2.5rem;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem; text-align: center;
+    cursor: default;
+  }
+  .stat-num { font-size: 2.25rem; font-weight: 700; }
+  .stat-num.done { color: var(--green); }
+  .stat-num.in-progress { color: var(--orange); }
+  .stat-num.not-started { color: var(--grey); }
+  .stat-num.blocked { color: var(--rose); }
+  .stat-num.iterated { color: var(--purple); }
+  .stat-num.total { color: var(--accent); }
+  .stat-label { color: var(--text-dim); font-size: 0.9rem; margin-top: 0.25rem; }
+
+  h2.section-title {
+    font-size: 1.2rem; color: var(--heading); margin: 2rem 0 0.75rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  h2.section-title .count {
+    font-size: 0.85rem; color: var(--text-dim); font-weight: 400;
+  }
+  table.artifacts {
+    width: 100%; border-collapse: collapse;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  table.artifacts th, table.artifacts td {
+    text-align: left; padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  table.artifacts th {
+    background: var(--surface2); color: var(--text-dim);
+    font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  table.artifacts tbody tr:last-child td { border-bottom: none; }
+  table.artifacts tbody tr:hover { background: var(--accent-glow); }
+  .pill {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 500; white-space: nowrap;
+  }
+  .pill-done { background: rgba(109,191,123,0.18); color: var(--green); }
+  .pill-in-progress { background: rgba(232,160,76,0.18); color: var(--orange); }
+  .pill-not-started { background: rgba(127,142,170,0.18); color: var(--grey); }
+  .pill-blocked { background: rgba(201,112,136,0.18); color: var(--rose); }
+  .pill-iterated { background: rgba(123,94,167,0.18); color: var(--purple); }
+  .notes { color: var(--text-dim); font-size: 0.88rem; }
+  .filter-bar {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+    margin-bottom: 1rem; align-items: center;
+  }
+  .filter-bar .label { color: var(--text-dim); font-size: 0.85rem; margin-right: 0.5rem; }
+  .filter-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-dim); padding: 0.3rem 0.75rem;
+    border-radius: 999px; font-size: 0.85rem; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { color: var(--text); }
+  .filter-btn.active {
+    background: var(--accent-glow); border-color: var(--accent); color: var(--accent);
+  }
+  .footer {
+    color: var(--text-dim); font-size: 0.85rem; margin-top: 3rem;
+    border-top: 1px solid var(--border); padding-top: 1rem;
+  }
+  .footer code { background: var(--surface); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">DSGN 410 — Build Status</div>
+  <div class="crumb">
+    <a href="../progress.html">← all courses</a>
+  </div>
+  <div class="spacer"></div>
+  <div class="theme-toggle" id="theme-toggle" title="Toggle light/dark">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </div>
+</nav>
+<main>
+  <h1>DSGN 410 — The Business of Graphic Design</h1>
+  <p class="subtitle">Course-level build dashboard. Live state of every artifact in the course's build. Pairs with the markdown source at <code>dsgn-410-build-status.md</code>.</p>
+
+  <div class="meta-row">
+    <div class="meta-item">📅 <strong id="meta-updated">Last updated: 2026-05-09</strong></div>
+    <div class="meta-item">✅ <strong>Validator: 1 of 1 pass</strong> (2026-05-09)</div>
+    <div class="meta-item">🎯 <strong>progress.html stage: 4 — authoring plan</strong></div>
+    <div class="meta-item">🚀 <strong>First run: Spring 2029</strong></div>
+  </div>
+
+  <div class="stats-row" id="stats"></div>
+
+  <div class="filter-bar">
+    <span class="label">Filter by state:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="done">Done</button>
+    <button class="filter-btn" data-filter="in-progress">In progress</button>
+    <button class="filter-btn" data-filter="not-started">Not started</button>
+    <button class="filter-btn" data-filter="blocked">Blocked</button>
+  </div>
+
+  <div id="sections"></div>
+
+  <p class="footer">
+    <strong>Dynamic dashboard.</strong> Data fetched from <code>dsgn-410-build-status.json</code>, which is regenerated by <code>scripts/scan-course-build.sh DSGN410</code> from <code>build-manifest.yml</code> + filesystem + git + GitHub-issue state. Run via <code>python3 -m http.server</code> from repo root, then visit <code>http://localhost:8000/course-design/dsgn-410/dsgn-410-build-status.html</code>. Cross-course comparison: <a href="../progress.html">course-design/progress.html</a>. Tracking issue: <a href="https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/6">#6 (epic)</a>.
+  </p>
+</main>
+
+<script>
+const STATE_LABELS = {
+  "done": "✅ Done",
+  "in-progress": "🔄 In progress",
+  "not-started": "⏳ Not started",
+  "blocked": "🚫 Blocked",
+  "iterated": "🔁 Iterated"
+};
+
+// Dashboard data is fetched from this JSON, regenerated by
+// scripts/scan-course-build.sh DSGN410. Do not hand-edit the JSON;
+// edit build-manifest.yml and re-run the script.
+const DATA_URL = "./dsgn-410-build-status.json";
+
+let scanData = null;
+let activeFilter = "all";
+
+function statePill(state) {
+  return `<span class="pill pill-${state}">${STATE_LABELS[state] || state}</span>`;
+}
+
+function fileLink(file, exists) {
+  if (!file) return "—";
+  return `<code>${file}</code>`;
+}
+
+function issueLink(num, url) {
+  if (!num) return "";
+  const href = url || `https://github.com/VanderpoolTeacher/program-overview-graphic-design/issues/${num}`;
+  return ` <a href="${href}" target="_blank" rel="noopener" style="color: var(--cyan); text-decoration: none;">#${num}</a>`;
+}
+
+function renderHeader() {
+  if (!scanData) return;
+  const t = scanData.totals || {};
+  const cards = [
+    { num: t.artifacts || 0, label: "Total artifacts", cls: "total" },
+    { num: t.done || 0, label: "Done", cls: "done" },
+    { num: t["in-progress"] || 0, label: "In progress", cls: "in-progress" },
+    { num: t["not-started"] || 0, label: "Not started", cls: "not-started" },
+    { num: t.blocked || 0, label: "Blocked", cls: "blocked" }
+  ];
+  document.getElementById("stats").innerHTML = cards.map(c => `
+    <div class="stat-card">
+      <div class="stat-num ${c.cls}">${c.num}</div>
+      <div class="stat-label">${c.label}</div>
+    </div>
+  `).join("");
+
+  // Update meta row with scan time
+  const updated = scanData.scanned_at ? new Date(scanData.scanned_at).toLocaleDateString() : "—";
+  const updatedEl = document.getElementById("meta-updated");
+  if (updatedEl) updatedEl.textContent = `Last scanned: ${updated}`;
+}
+
+function renderSections() {
+  if (!scanData) return;
+  const cats = scanData.categories || [];
+  const html = cats.map(cat => {
+    const items = (cat.artifacts || []).filter(
+      a => activeFilter === "all" || a.state === activeFilter
+    );
+    if (!items.length) return "";
+    const rows = items.map(a => `
+      <tr>
+        <td><strong>${a.name}</strong>${issueLink(a.issue, a.issue_url)}</td>
+        <td>${statePill(a.state)}</td>
+        <td>${fileLink(a.file, a.exists)}</td>
+        <td class="notes">${a.notes || "—"}</td>
+      </tr>
+    `).join("");
+    return `
+      <h2 class="section-title">${cat.name} <span class="count">${items.length}</span></h2>
+      <table class="artifacts">
+        <thead>
+          <tr><th>Artifact</th><th>State</th><th>File</th><th>Notes</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  }).join("");
+  document.getElementById("sections").innerHTML = html ||
+    `<p class="notes" style="margin: 2rem 0;">No artifacts match the current filter.</p>`;
+}
+
+function renderError(msg) {
+  document.getElementById("stats").innerHTML = "";
+  document.getElementById("sections").innerHTML = `
+    <div style="background: var(--surface); border: 1px solid var(--rose); border-radius: 12px; padding: 1.5rem; color: var(--text-dim);">
+      <strong style="color: var(--rose);">Could not load build-status data.</strong><br>
+      ${msg}<br><br>
+      Run from the repo root: <code>./scripts/scan-course-build.sh DSGN410</code>, then serve via <code>python3 -m http.server</code> and refresh.
+    </div>
+  `;
+}
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.filter;
+    renderSections();
+  });
+});
+
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  const cur = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme", cur === "light" ? "dark" : "light");
+});
+
+fetch(DATA_URL, { cache: "no-cache" })
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${DATA_URL}`);
+    return r.json();
+  })
+  .then(data => {
+    scanData = data;
+    renderHeader();
+    renderSections();
+  })
+  .catch(err => renderError(err.message));
+</script>
+</body>
+</html>
