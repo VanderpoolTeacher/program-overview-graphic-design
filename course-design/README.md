@@ -5,14 +5,33 @@ schedules) for the 13 core DSGN courses. The canonical course data lives
 in `../source/program-data.md`; this folder is where derived course
 content is built up over time.
 
-## Status
+## Status — three layers
 
-Per-course progress tracker → **[`progress.html`](./progress.html)**.
+| Layer | Where | When to check |
+|---|---|---|
+| **Program** | [`progress.html`](./progress.html) | Cross-course comparison; one stage per course |
+| **Course** | `<course-slug>/dsgn-NNN-build-status.md` | What's done / in progress / blocked inside one course's build |
+| **Active task** | GitHub issues tagged `<course-slug>` | Only when work is in flight; tracks discussion + history |
 
-Open it in a browser (e.g., `python3 -m http.server` from the repo root,
-then visit `http://localhost:8000/course-design/progress.html`). The
-tracker is hand-maintained — update the `courses` array in
+Each layer serves a different audience and frequency:
+
+- **Program** changes when a course advances a stage (rare — every few weeks).
+- **Course** changes whenever an artifact is committed or a blocker resolves (commit-rate).
+- **Active task** lives where the work is — GitHub issues + the per-course `assignments/` and `weeks/` folders.
+
+Open the program tracker in a browser:
+
+```bash
+python3 -m http.server   # from repo root
+# then visit http://localhost:8000/course-design/progress.html
+```
+
+The tracker is hand-maintained — update the `courses` array in
 `progress.html` as work advances.
+
+DSGN 410 is the worked example for all three layers — see
+`course-design/dsgn-410/dsgn-410-build-status.md` for the
+course-level dashboard pattern.
 
 ## Pipeline
 
@@ -53,14 +72,18 @@ course-design/
     ├── <course>-existing-materials-analysis.md
     ├── <course>-authoring-plan.md
     ├── <course>-course-design-document.md
+    ├── <course>-build-status.md     # course-level dashboard (per spec above)
     ├── assignments/
-    │   ├── 00-template-copy.md  # fresh seed copy; not counted as a real assignment
+    │   ├── 00-template-copy.md      # fresh seed copy; not counted as a real assignment
     │   ├── 01-<slug>.md
     │   └── ...
-    └── weeks/
-        ├── week-01.md           # one per week of class — lesson + interactive + readings
-        ├── week-02.md
-        └── ...
+    ├── weeks/
+    │   ├── week-01.md               # one per week of class — lesson + interactive + readings
+    │   ├── week-02.md
+    │   └── ...
+    └── resources/                   # course-specific reference: scenarios, exemplars, curriculum-resources doc
+        ├── <type>-day-in-the-life.md
+        └── curriculum-resources.md
 ```
 
 ## Templates
