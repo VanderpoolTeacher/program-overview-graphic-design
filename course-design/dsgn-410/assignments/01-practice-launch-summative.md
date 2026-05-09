@@ -76,9 +76,10 @@ your career — adjust the names, send for real.
   read like a portfolio (Figma) or like a working notebook (Notion).
 - **Pitch deck:** Figma, Keynote, Google Slides, or Canva.
 - **Contract drafting:** Adapt from open templates (AIGA Standard
-  Form Agreement; Use This Contract by Stacey Cordoni;
-  ContractsCounsel templates). Confirm the template's
-  jurisdictional fit before using.
+  Form Agreement; ContractsCounsel templates; Bonsai or HelloSign
+  freelance contract templates). Confirm the template's
+  jurisdictional fit before using. See
+  `resources/curriculum-resources.md` for the full vetted list.
 - **Invoicing:** Wave (free), Zoho Invoice (free), or a manual
   PDF invoice from a Google Docs template.
 - **AI tools (required somewhere):** ChatGPT, Claude, or Microsoft
