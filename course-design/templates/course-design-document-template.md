@@ -1,11 +1,11 @@
-# {{COURSE_CODE}} — Capstone Course Design Document
+# {{COURSE_CODE}} — Course Design Document
 
-> **Purpose:** The pedagogical contract for {{COURSE_CODE}}. Built on
-> Backward Design (Wiggins & McTighe 2005) — *what should students
-> leave with, and how will I know?* — with all seven pedagogy
-> frameworks deliberately applied. This document is the spec that any
-> authored materials (assignments, rubrics, weekly schedule) must
-> align with.
+> **Purpose:** The pedagogical contract for the entire {{COURSE_CODE}}
+> course (not for any single assignment). Built on Backward Design
+> (Wiggins & McTighe 2005) — *what should students leave with, and
+> how will I know?* — with all seven pedagogy frameworks deliberately
+> applied. This document is the spec that any authored materials
+> (assignments, rubrics, weekly schedule) must align with.
 >
 > Read alongside: `{{COURSE_SLUG}}-source-analysis.md`,
 > `{{COURSE_SLUG}}-existing-materials-analysis.md`, and the pedagogy

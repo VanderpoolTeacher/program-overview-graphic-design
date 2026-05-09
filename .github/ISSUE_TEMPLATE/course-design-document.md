@@ -1,7 +1,7 @@
 ---
-name: Capstone Course Design
-about: Comprehensive course design document for a single DSGN course (Backward Design + 7 pedagogy frameworks)
-title: 'Build capstone course design document for DSGN NNN'
+name: Course Design Document
+about: Comprehensive course-level design document for a single DSGN course (Backward Design + 7 pedagogy frameworks). Covers the WHOLE course, not a single assignment.
+title: 'Build course design document for DSGN NNN'
 labels: course-design
 assignees: ''
 ---
@@ -19,7 +19,7 @@ assignees: ''
 
 ## Goal
 
-Produce a comprehensive **capstone course design document** for DSGN NNN that:
+Produce a comprehensive **course design document** for DSGN NNN that:
 
 - Begins with the end in mind (Stage 1 — desired results, before any instruction is planned)
 - Names what graduates of the course can do *in the world* (transfer goals)
@@ -36,13 +36,13 @@ The completed document is the **pedagogical contract** for the course — the sp
 - [ ] `course-design/dsgn-NNN/dsgn-NNN-source-analysis.md` — *(does this exist? if not, scaffold first)*
 - [ ] `course-design/dsgn-NNN/dsgn-NNN-existing-materials-analysis.md` — *(if existing materials are present in `source/DSGN NNN*/`)*
 - [ ] `course-design/pedagogy/` — the 7 framework references
-- [ ] `course-design/templates/capstone-course-design-template.md` — the template
+- [ ] `course-design/templates/course-design-document-template.md` — the template
 
 ## Tasks
 
 - [ ] **Scaffold** (if not already done): `./scripts/scaffold-course.sh DSGNNNN`
 - [ ] **Read inputs:** source-analysis, existing-materials-analysis, and the relevant pedagogy framework files
-- [ ] **Copy template:** `cp course-design/templates/capstone-course-design-template.md course-design/dsgn-NNN/dsgn-NNN-capstone-course-design.md`
+- [ ] **Copy template:** `cp course-design/templates/course-design-document-template.md course-design/dsgn-NNN/dsgn-NNN-course-design-document.md`
 - [ ] **Stage 1 — Desired Results** (transfer goals, enduring understandings, essential questions, Bloom's analysis, Design Justice lens)
 - [ ] **Stage 2 — Acceptable Evidence** (performance task, multiple measures, course-level rubric, feedback structure)
 - [ ] **Stage 3 — Learning Plan** (course arc, Merrill, Kolb, Schön, Design Justice in practice, course connections)
@@ -68,6 +68,6 @@ The design document is complete when:
 
 ## References
 
-- Template: [`course-design/templates/capstone-course-design-template.md`](../../course-design/templates/capstone-course-design-template.md)
+- Template: [`course-design/templates/course-design-document-template.md`](../../course-design/templates/course-design-document-template.md)
 - Pedagogy folder: [`course-design/pedagogy/`](../../course-design/pedagogy/)
 - Canonical course data: [`source/program-data.md`](../../source/program-data.md)

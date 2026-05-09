@@ -1,10 +1,11 @@
-# DSGN 410 — Capstone Course Design Document
+# DSGN 410 — Course Design Document
 
-> **Purpose:** The pedagogical contract for DSGN 410. Built on Backward
-> Design (Wiggins & McTighe 2005) — *what should students leave with,
-> and how will I know?* — with all seven pedagogy frameworks
-> deliberately applied. This document is the spec that any authored
-> materials (assignments, rubrics, weekly schedule) must align with.
+> **Purpose:** The pedagogical contract for the entire DSGN 410 course
+> (not for any single assignment). Built on Backward Design (Wiggins &
+> McTighe 2005) — *what should students leave with, and how will I
+> know?* — with all seven pedagogy frameworks deliberately applied.
+> This document is the spec that any authored materials (assignments,
+> rubrics, weekly schedule) must align with.
 >
 > Read alongside: `dsgn-410-source-analysis.md`,
 > `dsgn-410-existing-materials-analysis.md`, and the pedagogy folder
