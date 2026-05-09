@@ -25,6 +25,7 @@ tracker is hand-maintained — update the `courses` array in
 | 4 — Authoring plan | Fill in `*-authoring-plan.md` listing assignments to author with CLO map and priority | Filled doc |
 | 4b — Course design document | Copy `templates/course-design-document-template.md` and fill it out for this course (Backward Design + 7 pedagogy frameworks). Open via the `Course Design Document` GitHub issue template. The "capstone" of the course-design artifacts — covers the WHOLE course, not a single assignment. | Filled doc; pedagogical contract for the course |
 | 5 — Author assignments | Per planned assignment, copy `assignments/00-template-copy.md` and fill it out | One MD per assignment |
+| 5b — Author weekly modules | Per week of class, copy `templates/weekly-module-template.md` to `weeks/week-NN.md` and fill it out (lesson plan, in-class interactive, readings, reference to that week's formative) | One MD per week |
 | 6 — Validate | `../scripts/validate-course-design.sh DSGN_NNN` | Pass/fail report |
 | 7 — Review | Walk the author's checklist at the bottom of each assignment | Checked-off lists |
 | 8 — Publish | (External — LMS / syllabus / Google Doc) | (Out of scope here) |
@@ -44,16 +45,21 @@ course-design/
 │   ├── source-analysis-template.md
 │   ├── existing-materials-analysis-template.md
 │   ├── authoring-plan-template.md
-│   └── course-design-document-template.md
+│   ├── course-design-document-template.md
+│   └── weekly-module-template.md
 ├── pedagogy/                  # the 7 framework references
 └── <course-slug>/             # one per course as work progresses
     ├── <course>-source-analysis.md
     ├── <course>-existing-materials-analysis.md
     ├── <course>-authoring-plan.md
     ├── <course>-course-design-document.md
-    └── assignments/
-        ├── 00-template-copy.md  # fresh seed copy; not counted as a real assignment
-        ├── 01-<slug>.md
+    ├── assignments/
+    │   ├── 00-template-copy.md  # fresh seed copy; not counted as a real assignment
+    │   ├── 01-<slug>.md
+    │   └── ...
+    └── weeks/
+        ├── week-01.md           # one per week of class — lesson + interactive + readings
+        ├── week-02.md
         └── ...
 ```
 
@@ -78,6 +84,11 @@ course-design/
   every subsequent assignment and rubric. Use the GitHub issue template
   `.github/ISSUE_TEMPLATE/course-design-document.md` to start the work
   for a new course. DSGN 410 is the canonical worked example.
+- **`weekly-module-template.md`** — one per week of class. Bundles
+  learning goals, pre-class readings, lesson plan (50-min structure
+  with timed segments), the in-class interactive activity, the
+  formative deliverable due that week, and instructor's notes. The
+  unit teachers actually plan and deliver from.
 
 ## How to use this system with Claude
 
