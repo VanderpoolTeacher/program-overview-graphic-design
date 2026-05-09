@@ -27,11 +27,16 @@ By the end of this week, students can:
 
 ## Pre-class
 
-**Required (~40 minutes):**
+**Required (~55 minutes):**
 - *Read:* Mike Monteiro, *Design is a Job* (A Book Apart, 2012),
   Chapter 1 "You Are a Designer" (~20 min). Frame: what assumptions
   does Monteiro make about who his reader is, and what kind of
   practice they're building?
+- *Read:* `resources/freelance-day-in-the-life.md` — a fictional
+  but realistic Tuesday in the life of a solo freelance brand
+  designer (~15 min). Hold the after-reading prompts; we use them
+  in class. **The scenario is the spine of today's discussion** —
+  do not skip.
 - *Read:* AIGA, "Salary and Benefits Survey" (current edition,
   freely available at aiga.org) — focus on the practice-type
   breakdown table only (~10 min). Notice which practice types appear
